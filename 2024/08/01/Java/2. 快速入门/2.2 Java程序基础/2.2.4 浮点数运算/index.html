@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		2.2.4 浮点数运算 | 
+	 
+	Yuwl&#39;s Notes
+	</title>
+	
+	<!-- keywords,description -->
+	
+	
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "wujun234.com";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js"></script>
+
+	
+	
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/" class="logo">Yuwl's Notes</a>
+
+	<ul id="menu">
+    
+
+    
+      <li class="menu-item">
+        <a href="/tags" class="menu-item-link">Tags</a>
+      </li>
+    
+
+    
+      <li class="menu-item">
+        <a href="/categories" class="menu-item-link">Categories</a>
+      </li>
+    
+
+    
+  
+    
+      <li class="menu-item">
+        <a href='https://github.com/yuwl' class="menu-item-link" target="_blank">
+          <i class="fa fa-github fa-2x"></i>
+        </a>
+      </li>
+    
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="Press Enter to search">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Java
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/07/31/Java/1.%20java%E7%AE%80%E4%BB%8B/">
+                     
+										    1. java简介
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										2. 快速入门
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										2.1 搭建开发环境
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/07/31/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.1%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/2.1.1%20%E5%AE%89%E8%A3%85JDK/">
+                     
+										    2.1.1 安装JDK
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/07/31/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.1%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/2.1.2%20%E7%AC%AC%E4%B8%80%E4%B8%AAJava%E7%A8%8B%E5%BA%8F/">
+                     
+										    2.1.2 第一个Java程序
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/07/31/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.1%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/2.1.3%20%E4%BD%BF%E7%94%A8IDE/">
+                     
+										    2.1.3 使用IDE
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										2.2 Java程序基础
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.1%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/">
+                     
+										    2.2.1 Java程序基础
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.2%20%E5%8F%98%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+                     
+										    2.2.2 变量和数据类型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.3%20%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97/">
+                     
+										    2.2.3 整数运算
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/2024/08/01/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.4%20%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97/">
+                     
+										    2.2.4 浮点数运算
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.5%20%E5%B8%83%E5%B0%94%E8%BF%90%E7%AE%97/">
+                     
+										    2.2.5 布尔运算
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.6%20%E5%AD%97%E7%AC%A6%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                     
+										    2.2.6 字符和字符串
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.7%20%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B/">
+                     
+										    2.2.7 数组类型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/07/29/hello-world/">
+                     
+										    Hello World
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content" class="content">
+		<h1 id="article-title">
+	2.2.4 浮点数运算
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+	
+
+	<span>Yuwl</span>
+	<span>2024-08-01 10:53:26</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+          
+              <span>
+                  <i class="fa fa-folder" aria-hidden="true">
+                  <a href="/categories/Java/">Java</a>
+                  </i>
+                
+              </span>
+          
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+            
+                <span>
+                    <i class="fa fa-tag" aria-hidden="true">
+                    <a href="/tags/java/">java</a>
+                    </i>
+                </span>
+            
+        
+    
+  </div>
+
+</div>
+
+<!-- content -->
+<div id="article-content">
+	<p>现在我们来学习 Java 中的浮点数运算。</p>
+<h3 id="1-浮点数类型"><a href="#1-浮点数类型" class="headerlink" title="1. 浮点数类型"></a>1. 浮点数类型</h3><p>Java 提供两种浮点数类型：</p>
+<ul>
+<li>float： 单精度浮点数，使用 32 位存储，精度较低。</li>
+<li>double： 双精度浮点数，使用 64 位存储，精度较高。double 是 Java 中默认的浮点数类型。</li>
+</ul>
+<h3 id="2-浮点数运算符"><a href="#2-浮点数运算符" class="headerlink" title="2. 浮点数运算符"></a>2. 浮点数运算符</h3><p>浮点数运算符与整数运算符基本相同，包括：</p>
+<ul>
+<li><code>+</code> (加法)：将两个浮点数相加。</li>
+<li><code>-</code> (减法)：将两个浮点数相减。</li>
+<li><code>*</code> (乘法)：将两个浮点数相乘。</li>
+<li><code>/</code> (除法)：将两个浮点数相除。</li>
+<li><code>%</code> (取模)：计算两个浮点数相除的余数。</li>
+</ul>
+<h3 id="3-浮点数运算示例"><a href="#3-浮点数运算示例" class="headerlink" title="3. 浮点数运算示例"></a>3. 浮点数运算示例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">float</span> <span class="variable">num1</span> <span class="operator">=</span> <span class="number">10.5f</span>;</span><br><span class="line">        <span class="type">float</span> <span class="variable">num2</span> <span class="operator">=</span> <span class="number">2.5f</span>;</span><br><span class="line"></span><br><span class="line">        <span class="type">float</span> <span class="variable">sum</span> <span class="operator">=</span> num1 + num2; <span class="comment">// 加法</span></span><br><span class="line">        <span class="type">float</span> <span class="variable">difference</span> <span class="operator">=</span> num1 - num2; <span class="comment">// 减法</span></span><br><span class="line">        <span class="type">float</span> <span class="variable">product</span> <span class="operator">=</span> num1 * num2; <span class="comment">// 乘法</span></span><br><span class="line">        <span class="type">float</span> <span class="variable">quotient</span> <span class="operator">=</span> num1 / num2; <span class="comment">// 除法</span></span><br><span class="line">        <span class="type">float</span> <span class="variable">remainder</span> <span class="operator">=</span> num1 % num2; <span class="comment">// 取模</span></span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;sum = &quot;</span> + sum);</span><br><span class="line">        System.out.println(<span class="string">&quot;difference = &quot;</span> + difference);</span><br><span class="line">        System.out.println(<span class="string">&quot;product = &quot;</span> + product);</span><br><span class="line">        System.out.println(<span class="string">&quot;quotient = &quot;</span> + quotient);</span><br><span class="line">        System.out.println(<span class="string">&quot;remainder = &quot;</span> + remainder);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-浮点数精度问题"><a href="#4-浮点数精度问题" class="headerlink" title="4. 浮点数精度问题"></a>4. 浮点数精度问题</h3><p>由于计算机使用二进制表示浮点数，而很多十进制数无法精确地用二进制表示，因此浮点数运算可能会存在精度问题。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> <span class="variable">num1</span> <span class="operator">=</span> <span class="number">0.1</span>;</span><br><span class="line"><span class="type">double</span> <span class="variable">num2</span> <span class="operator">=</span> <span class="number">0.2</span>;</span><br><span class="line"><span class="type">double</span> <span class="variable">result</span> <span class="operator">=</span> num1 + num2;</span><br><span class="line"></span><br><span class="line">System.out.println(result); <span class="comment">// 输出结果可能为 0.30000000000000004 而不是 0.3</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-使用-BigDecimal-处理精度问题"><a href="#5-使用-BigDecimal-处理精度问题" class="headerlink" title="5. 使用 BigDecimal 处理精度问题"></a>5. 使用 BigDecimal 处理精度问题</h3><p>为了避免浮点数精度问题，可以使用 java.math.BigDecimal 类来进行精确的浮点数运算。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.math.BigDecimal;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">BigDecimal</span> <span class="variable">num1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BigDecimal</span>(<span class="string">&quot;0.1&quot;</span>);</span><br><span class="line">        <span class="type">BigDecimal</span> <span class="variable">num2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BigDecimal</span>(<span class="string">&quot;0.2&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">BigDecimal</span> <span class="variable">result</span> <span class="operator">=</span> num1.add(num2);</span><br><span class="line"></span><br><span class="line">        System.out.println(result); <span class="comment">// 输出结果为 0.3</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-int-类型与-float-或-double-类型之间的转换"><a href="#6-int-类型与-float-或-double-类型之间的转换" class="headerlink" title="6. int 类型与 float 或 double 类型之间的转换"></a>6. int 类型与 float 或 double 类型之间的转换</h3><p><strong>1. 从 int 转换为 float 或 double：</strong></p>
+<ul>
+<li>自动类型转换 (Widening Conversion)： 当 int 与 float 或 double 参与运算时，int 会自动转换为 float 或 double。例如：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int a = 10;</span><br><span class="line">float b = 2.5f;</span><br><span class="line">double c = a + b;  // 这里 a 会自动转换为 double 类型</span><br></pre></td></tr></table></figure></li>
+<li>强制类型转换 (Casting)： 你也可以使用强制类型转换来显式地将 int 转换为 float 或 double。例如：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">float</span> <span class="variable">b</span> <span class="operator">=</span> (<span class="type">float</span>) a;</span><br><span class="line"><span class="type">double</span> <span class="variable">c</span> <span class="operator">=</span> (<span class="type">double</span>) a;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>2. 从 float 或 double 转换为 int：</strong></p>
+<ul>
+<li><p>强制类型转换 (Casting)： 由于 float 或 double 的精度比 int 高，直接将 float 或 double 赋值给 int 会造成数据丢失。因此，你需要使用强制类型转换。例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">float</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10.5f</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> (<span class="type">int</span>) a;   <span class="comment">// 会舍去小数部分，b 的值为 10</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意数据丢失： 强制类型转换可能会导致数据丢失，因为 float 或 double 中的小数部分会被舍弃。</p>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结:"></a>总结:</h3><ul>
+<li>Java 提供了两种浮点数类型：float 和 double。</li>
+<li>浮点数运算符与整数运算符类似。</li>
+<li>浮点数运算可能会存在精度问题，可以使用 BigDecimal 类来进行精确的浮点数运算。</li>
+<li>int 类型与 float 或 double 类型之间的转换</li>
+</ul>
+<p>希望这些信息能够帮助你理解 Java 中的浮点数运算！</p>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2024/08/01/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.5%20%E5%B8%83%E5%B0%94%E8%BF%90%E7%AE%97/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  2.2.5 布尔运算
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2024/08/01/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.3%20%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97/">
+                2.2.3 整数运算
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
+
+	</div>
+	<div id="footer">
+	<p>
+	©<span id="footerYear-start"></span>-<span id="footerYear-end"></span>
+
+	
+	    <a href="/">Yuwl</a>
+	
+	
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//wujun.me" target="_blank">Wu Jun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+
+
+<script type="text/javascript">
+	document.getElementById('footerYear-start').innerHTML = new Date().getFullYear() + '';
+</script>
+
+<script type="text/javascript">
+	document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
+</script>
+
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
