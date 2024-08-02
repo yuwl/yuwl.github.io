@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		2.2.5 布尔运算 | 
+		2.3.6 for循环 | 
 	 
 	Yuwl&#39;s Notes
 	</title>
@@ -240,7 +240,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2024/08/01/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.5%20%E5%B8%83%E5%B0%94%E8%BF%90%E7%AE%97/">
                      
 										    2.2.5 布尔运算
@@ -339,7 +339,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2024/08/02/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.3%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/2.3.6%20for%E5%BE%AA%E7%8E%AF/">
                      
 										    2.3.6 for循环
@@ -390,7 +390,7 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<h1 id="article-title">
-	2.2.5 布尔运算
+	2.3.6 for循环
 </h1>
 
 <!-- meta -->
@@ -398,7 +398,7 @@
 	
 
 	<span>Yuwl</span>
-	<span>2024-08-01 11:13:29</span>
+	<span>2024-08-02 10:43:50</span>
 
   <div id="article-categories">
     
@@ -433,28 +433,95 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>现在我们来学习 Java 中的布尔运算。</p>
-<h3 id="1-布尔类型："><a href="#1-布尔类型：" class="headerlink" title="1. 布尔类型："></a>1. 布尔类型：</h3><p>Java 中的 boolean 类型用于表示真或假，只有两个值：true 或 false。<br>布尔值常用于条件语句和循环语句中，控制程序的执行流程。</p>
-<h3 id="2-布尔运算符："><a href="#2-布尔运算符：" class="headerlink" title="2. 布尔运算符："></a>2. 布尔运算符：</h3><p>Java 提供了一系列布尔运算符，用于对布尔值进行逻辑运算：</p>
-<ul>
-<li><code>&amp;&amp;</code> (逻辑与)：当两个操作数都为 true 时，结果为 true，否则为 false。</li>
-<li><code>||</code> (逻辑或)：当两个操作数中至少有一个为 true 时，结果为 true，否则为 false。</li>
-<li><code>!</code> (逻辑非)：将操作数的值取反，如果操作数为 true，则结果为 false，反之亦然。</li>
-<li><code>^</code> (异或)：当两个操作数的值不同时，结果为 true，否则为 false。</li>
-</ul>
-<h3 id="3-示例："><a href="#3-示例：" class="headerlink" title="3. 示例："></a>3. 示例：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">a</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">b</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="type">boolean</span> <span class="variable">andResult</span> <span class="operator">=</span> a &amp;&amp; b; <span class="comment">// 逻辑与，结果为 false</span></span><br><span class="line">        <span class="type">boolean</span> <span class="variable">orResult</span> <span class="operator">=</span> a || b; <span class="comment">// 逻辑或，结果为 true</span></span><br><span class="line">        <span class="type">boolean</span> <span class="variable">notResult</span> <span class="operator">=</span> !a; <span class="comment">// 逻辑非，结果为 false</span></span><br><span class="line">        <span class="type">boolean</span> <span class="variable">xorResult</span> <span class="operator">=</span> a ^ b; <span class="comment">// 异或，结果为 true</span></span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;andResult = &quot;</span> + andResult);</span><br><span class="line">        System.out.println(<span class="string">&quot;orResult = &quot;</span> + orResult);</span><br><span class="line">        System.out.println(<span class="string">&quot;notResult = &quot;</span> + notResult);</span><br><span class="line">        System.out.println(<span class="string">&quot;xorResult = &quot;</span> + xorResult);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+	<p>现在我们来学习 Java 中的 <code>for</code> 循环。</p>
+<p><code>For</code> 循环是一种常用的循环结构，用于重复执行一段代码，直到满足特定的条件。它在 <code>Java</code> 中被广泛使用，用于处理数组、列表和其他数据结构，以及实现重复性的任务。</p>
+<p><strong><code>For</code> 循环的基本语法如下：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (initialization; condition; increment) &#123;</span><br><span class="line">  <span class="comment">// Code to be executed repeatedly</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="4-布尔运算的应用："><a href="#4-布尔运算的应用：" class="headerlink" title="4. 布尔运算的应用："></a>4. 布尔运算的应用：</h3><ul>
-<li>条件语句： 布尔运算常用于 if 语句和 switch 语句中，根据条件的真假来决定执行哪一段代码。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">if</span> (age &gt;= <span class="number">18</span> &amp;&amp; country == <span class="string">&quot;中国&quot;</span>) &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;您可以投票&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>循环语句： 布尔运算常用于 while 循环和 for 循环中，控制循环的执行次数。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">while</span> (isRunning &amp;&amp; !isFinished) &#123;</span><br><span class="line">    <span class="comment">// 执行循环体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="5-常见误区："><a href="#5-常见误区：" class="headerlink" title="5. 常见误区："></a>5. 常见误区：</h3><ul>
-<li>短路运算： &amp;&amp; 和 || 运算符支持短路运算。如果第一个操作数足以确定结果，那么第二个操作数将不会被计算。</li>
-</ul>
-<p>例如，在 a &amp;&amp; b 中，如果 a 为 false，那么 b 将不会被计算，因为无论 b 的值为多少，结果都一定是 false。</p>
 <ul>
-<li>优先级： 布尔运算符的优先级低于算术运算符，高于赋值运算符。</li>
+<li>Initialization: 初始化语句，在循环开始前执行一次，通常用于声明循环计数器变量。</li>
+<li>Condition: 条件语句，在每次循环开始前进行判断，如果条件为真，则执行循环体代码，否则退出循环。</li>
+<li>Increment: 增量语句，在每次循环结束后执行，通常用于更新循环计数器变量的值。</li>
 </ul>
+<p>例如，以下代码使用 <code>For</code> 循环打印 1 到 10 的数字：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">  System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>工作原理：</strong></p>
+<ul>
+<li>首先，执行初始化语句 int i &#x3D; 1;，创建一个名为 i 的整型变量，并将其初始化为 1。</li>
+<li>然后，检查条件语句 i &lt;&#x3D; 10;，如果 i 的值小于等于 10，则执行循环体代码 System.out.println(i);，打印当前 i 的值。</li>
+<li>接下来，执行增量语句 i++;，将 i 的值加 1。</li>
+<li>重复步骤 2 和 3，直到 i 的值大于 10，此时循环结束。</li>
+</ul>
+<p>For 循环还可以使用其他语法形式，例如：</p>
+<ul>
+<li>嵌套循环: 在一个循环内部再嵌套另一个循环，用于处理多维数据结构。</li>
+</ul>
+<p>下面是用 Java 语言实现的冒泡排序算法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BubbleSort</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">bubbleSort</span><span class="params">(<span class="type">int</span>[] arr)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> arr.length;</span><br><span class="line">        <span class="comment">// 外层循环控制排序轮数</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="comment">// 内层循环比较相邻元素并交换</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; n - i - <span class="number">1</span>; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                    <span class="comment">// 交换 arr[j] 和 arr[j+1]</span></span><br><span class="line">                    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> arr[j];</span><br><span class="line">                    arr[j] = arr[j + <span class="number">1</span>];</span><br><span class="line">                    arr[j + <span class="number">1</span>] = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] arr = &#123;<span class="number">64</span>, <span class="number">34</span>, <span class="number">25</span>, <span class="number">12</span>, <span class="number">22</span>, <span class="number">11</span>, <span class="number">90</span>&#125;;</span><br><span class="line">        System.out.println(<span class="string">&quot;原始数组：&quot;</span>);</span><br><span class="line">        printArray(arr);</span><br><span class="line">        bubbleSort(arr);</span><br><span class="line">        System.out.println(<span class="string">&quot;排序后的数组：&quot;</span>);</span><br><span class="line">        printArray(arr);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 打印数组</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printArray</span><span class="params">(<span class="type">int</span>[] arr)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            System.out.print(arr[i] + <span class="string">&quot; &quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>代码解释：</strong></p>
+<ol>
+<li>bubbleSort(int[] arr) 函数：</li>
+</ol>
+<ul>
+<li>接受一个整型数组 arr 作为参数。</li>
+<li>使用两个嵌套的 for 循环进行排序。</li>
+<li>外层循环： 循环 n - 1 次，其中 n 是数组的长度。每一轮循环都会将最大的元素移动到数组的末尾。</li>
+<li>内层循环： 循环 n - i - 1 次，每次比较相邻的两个元素。如果前面的元素大于后面的元素，则交换它们。</li>
+<li>交换元素： 使用一个临时变量 temp 来完成元素的交换。</li>
+</ul>
+<ol start="2">
+<li>main(String[] args) 函数：</li>
+</ol>
+<ul>
+<li>创建一个待排序的整型数组 arr。</li>
+<li>打印原始数组。</li>
+<li>调用 bubbleSort(arr) 函数进行排序。</li>
+<li>打印排序后的数组。</li>
+</ul>
+<ol start="3">
+<li>printArray(int[] arr) 函数：</li>
+</ol>
+<ul>
+<li>接受一个整型数组 arr 作为参数。</li>
+<li>使用一个 for 循环遍历数组，并将每个元素打印到控制台。</li>
+</ul>
+<p><strong>冒泡排序的工作原理：</strong></p>
+<p>冒泡排序是一种简单的排序算法，它重复地遍历要排序的数组，每次比较相邻的两个元素，如果顺序错误就交换它们。经过多次遍历，最终可以将最大的元素移动到数组的末尾。</p>
+<p><strong>时间复杂度：</strong></p>
+<p>冒泡排序的时间复杂度为 O(n^2)，其中 n 是数组的长度。这意味着对于一个长度为 n 的数组，需要执行 n^2 次比较和交换操作。</p>
+<p><strong>总结：</strong></p>
+<p>冒泡排序是一种简单的排序算法，但效率较低，不适合处理大量数据。对于规模较小的数组，它还是一种可行的排序方法。</p>
+<ul>
+<li>增强 For 循环: 简化对数组或集合的遍历操作。</li>
+</ul>
+<p>增强 For 循环，也称为“for-each 循环”，是 Java 中的一种循环结构，它简化了对数组或集合的遍历操作。</p>
+<p><strong>语法：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (数据类型 变量名 : 数组或集合) &#123;</span><br><span class="line">  <span class="comment">// 循环体代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解释：</strong></p>
+<ul>
+<li>数据类型： 数组或集合中元素的数据类型。</li>
+<li>变量名： 一个临时变量，用于在每次迭代中存储当前元素的值。</li>
+<li>数组或集合： 要遍历的数组或集合。</li>
+</ul>
+<p><strong>示例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] numbers = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用增强 For 循环遍历数组</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> number : numbers) &#123;</span><br><span class="line">  System.out.println(number);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>优点：</strong></p>
+<ul>
+<li>简洁易懂： 与传统 For 循环相比，增强 For 循环代码更简洁，更易于理解。</li>
+<li>安全可靠： 增强 For 循环避免了手动索引操作，减少了潜在的越界错误。</li>
+<li>通用性强： 增强 For 循环可用于遍历数组、集合、以及其他可迭代对象。</li>
+</ul>
+<p><strong>局限性：</strong></p>
+<ul>
+<li>不能修改元素： 增强 For 循环只能读取元素，不能修改元素的值。</li>
+<li>效率略低： 对于某些情况，增强 For 循环的效率可能略低于传统 For 循环。</li>
+</ul>
+<p><strong>总结：</strong></p>
+<p>增强 For 循环是一种简化遍历操作的便捷工具，它在大多数情况下是传统 For 循环的更好选择。然而，在需要修改元素或追求极致效率的情况下，传统 For 循环可能更合适。</p>
+<p>For 循环是一种强大且灵活的循环结构，能够处理各种重复性的任务。通过理解 For 循环的基本语法和工作原理，您可以更加熟练地使用 Java 语言进行编程。</p>
 
 </div>
 
@@ -463,16 +530,16 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/08/01/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.6%20%E5%AD%97%E7%AC%A6%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+              <a href="/2024/08/02/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.3%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/2.3.7%20break%E5%92%8Ccontinue/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  2.2.6 字符和字符串
+                  2.3.7 break和continue
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2024/08/01/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.4%20%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97/">
-                2.2.4 浮点数运算
+              <a href="/2024/08/02/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.3%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/2.3.5%20do-while%E5%BE%AA%E7%8E%AF/">
+                2.3.5 do-while循环
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
