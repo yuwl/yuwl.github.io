@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		categories | 
+		3.2.3 包装类型 | 
 	 
 	Yuwl&#39;s Notes
 	</title>
@@ -284,7 +284,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2024/08/03/Java/3.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.3%20%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B/">
                      
 										    3.2.3 包装类型
@@ -379,27 +379,118 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<h1 id="article-title">
-	<i class="fa fa-folder-open" aria-hidden="true"></i>Categories
+	3.2.3 包装类型
 </h1>
-<h3>
-	Total 1
-</h3>
 
-<div id="article-content">
+<!-- meta -->
+<div class="article-meta">
+	
+
+	<span>Yuwl</span>
+	<span>2024-08-03 11:06:28</span>
+
+  <div id="article-categories">
     
-        <ul>
-            
+		  <span>Categories：</span>
+      
+          
+              <span>
+                  <i class="fa fa-folder" aria-hidden="true">
+                  <a href="/categories/Java/">Java</a>
+                  </i>
                 
-                    <li class="menu-item">
-                        <span>
-                            <a href="/categories/Java/">Java(18)</a>
-                        </span>
-                    </li>
-                
-            
-        </ul>
+              </span>
+          
+      
     
+
+    
+		    <span>Tags：</span>
+        
+            
+                <span>
+                    <i class="fa fa-tag" aria-hidden="true">
+                    <a href="/tags/java/">java</a>
+                    </i>
+                </span>
+            
+        
+    
+  </div>
+
 </div>
+
+<!-- content -->
+<div id="article-content">
+	<p>现在我们来学习 Java 中的包装类型。</p>
+<h3 id="什么是包装类型？"><a href="#什么是包装类型？" class="headerlink" title="什么是包装类型？"></a>什么是包装类型？</h3><p>Java有8种基本数据类型（byte, short, int, long, float, double, boolean, char），每种基本类型都有对应的包装类：</p>
+<ol>
+<li>Byte</li>
+<li>Short</li>
+<li>Integer</li>
+<li>Long</li>
+<li>Float</li>
+<li>Double</li>
+<li>Boolean</li>
+<li>Character<br>这些类位于java.lang包中，它们将基本类型”包装”成对象。</li>
+</ol>
+<h3 id="为什么需要包装类型？"><a href="#为什么需要包装类型？" class="headerlink" title="为什么需要包装类型？"></a>为什么需要包装类型？</h3><ol>
+<li>将基本类型转换为对象，以便在需要对象的地方使用（如集合类）。</li>
+<li>提供了一些有用的方法，如类型转换和值比较。</li>
+<li>支持null值，而基本类型不支持。</li>
+</ol>
+<h3 id="创建包装类对象"><a href="#创建包装类对象" class="headerlink" title="创建包装类对象"></a>创建包装类对象</h3><ol>
+<li>有两种主要方式创建包装类对象：</li>
+<li>使用构造函数（不推荐，在Java 9中已被弃用）</li>
+</ol>
+<h4 id="使用静态工厂方法（推荐）"><a href="#使用静态工厂方法（推荐）" class="headerlink" title="使用静态工厂方法（推荐）"></a>使用静态工厂方法（推荐）</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用静态工厂方法（推荐）</span></span><br><span class="line"><span class="type">Integer</span> <span class="variable">intObj</span> <span class="operator">=</span> Integer.valueOf(<span class="number">42</span>);</span><br><span class="line"><span class="type">Double</span> <span class="variable">doubleObj</span> <span class="operator">=</span> Double.valueOf(<span class="number">3.14</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 自动装箱（最简单的方式）</span></span><br><span class="line"><span class="type">Integer</span> <span class="variable">anotherIntObj</span> <span class="operator">=</span> <span class="number">42</span>;</span><br><span class="line"><span class="type">Double</span> <span class="variable">anotherDoubleObj</span> <span class="operator">=</span> <span class="number">3.14</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="自动装箱和自动拆箱"><a href="#自动装箱和自动拆箱" class="headerlink" title="自动装箱和自动拆箱"></a>自动装箱和自动拆箱</h3><p>Java提供了自动装箱（autoboxing）和自动拆箱（unboxing）机制，使得基本类型和包装类型之间的转换更加方便。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 自动装箱</span></span><br><span class="line"><span class="type">Integer</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">100</span>; <span class="comment">// 等同于 Integer.valueOf(100)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 自动拆箱</span></span><br><span class="line"><span class="type">int</span> <span class="variable">value</span> <span class="operator">=</span> num; <span class="comment">// 等同于 num.intValue()</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在表达式中的应用</span></span><br><span class="line"><span class="type">Integer</span> <span class="variable">result</span> <span class="operator">=</span> num + <span class="number">50</span>; <span class="comment">// num自动拆箱，计算后结果自动装箱</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><p>包装类提供了许多有用的方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 类型转换</span></span><br><span class="line"><span class="type">int</span> <span class="variable">intValue</span> <span class="operator">=</span> Integer.parseInt(<span class="string">&quot;42&quot;</span>);</span><br><span class="line"><span class="type">double</span> <span class="variable">doubleValue</span> <span class="operator">=</span> Double.parseDouble(<span class="string">&quot;3.14&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 值比较</span></span><br><span class="line"><span class="type">Integer</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line"><span class="type">Integer</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">200</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">compare</span> <span class="operator">=</span> a.compareTo(b); <span class="comment">// 返回负数，因为a &lt; b</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 最大值和最小值</span></span><br><span class="line"><span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> Integer.MAX_VALUE;</span><br><span class="line"><span class="type">int</span> <span class="variable">min</span> <span class="operator">=</span> Integer.MIN_VALUE;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 字符串表示</span></span><br><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> Integer.toString(<span class="number">42</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 进制转换</span></span><br><span class="line"><span class="type">String</span> <span class="variable">binary</span> <span class="operator">=</span> Integer.toBinaryString(<span class="number">42</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">hex</span> <span class="operator">=</span> Integer.toHexString(<span class="number">42</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
+<li>缓存：Integer类缓存了-128到127之间的值，这个范围内的装箱操作会更快。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line"><span class="type">Integer</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line">System.out.println(a == b); <span class="comment">// true，因为使用了缓存</span></span><br><span class="line"></span><br><span class="line"><span class="type">Integer</span> <span class="variable">c</span> <span class="operator">=</span> <span class="number">1000</span>;</span><br><span class="line"><span class="type">Integer</span> <span class="variable">d</span> <span class="operator">=</span> <span class="number">1000</span>;</span><br><span class="line">System.out.println(c == d); <span class="comment">// false，超出缓存范围</span></span><br></pre></td></tr></table></figure></li>
+<li>null值：包装类型可以为null，在使用时要注意防止NullPointerException。</li>
+<li>性能：频繁的装箱和拆箱操作可能影响性能，在性能敏感的场景中要谨慎使用。</li>
+</ol>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2024/08/03/Java/3.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.4%20JavaBean/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  3.2.4 JavaBean
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2024/08/03/Java/3.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.2%20StringBuilder/">
+                3.2.2 StringBuilder 和 StringBuffer
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
 
 	</div>
 	<div id="footer">

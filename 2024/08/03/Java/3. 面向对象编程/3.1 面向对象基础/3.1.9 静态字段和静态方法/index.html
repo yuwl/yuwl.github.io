@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		Hello World | 
+		3.1.9 静态字段和静态方法 | 
 	 
 	Yuwl&#39;s Notes
 	</title>
@@ -240,7 +240,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2024/08/03/Java/3.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.9%20%E9%9D%99%E6%80%81%E5%AD%97%E6%AE%B5%E5%92%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95/">
                      
 										    3.1.9 静态字段和静态方法
@@ -362,7 +362,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2024/08/03/hello-world/">
                      
 										    Hello World
@@ -379,7 +379,7 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<h1 id="article-title">
-	Hello World
+	3.1.9 静态字段和静态方法
 </h1>
 
 <!-- meta -->
@@ -387,16 +387,33 @@
 	
 
 	<span>Yuwl</span>
-	<span>2024-08-03 08:18:50</span>
+	<span>2024-08-03 10:31:13</span>
 
   <div id="article-categories">
     
 		  <span>Categories：</span>
       
+          
+              <span>
+                  <i class="fa fa-folder" aria-hidden="true">
+                  <a href="/categories/Java/">Java</a>
+                  </i>
+                
+              </span>
+          
+      
     
 
     
 		    <span>Tags：</span>
+        
+            
+                <span>
+                    <i class="fa fa-tag" aria-hidden="true">
+                    <a href="/tags/java/">java</a>
+                    </i>
+                </span>
+            
         
     
   </div>
@@ -405,19 +422,46 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+	<p>现在我们来学习 Java 面向对象中的静态字段和静态方法。</p>
+<h3 id="什么是静态字段和静态方法？"><a href="#什么是静态字段和静态方法？" class="headerlink" title="什么是静态字段和静态方法？"></a>什么是静态字段和静态方法？</h3><ol>
+<li>静态字段（Static Fields）：也称为类变量，属于类而不是类的实例。</li>
+<li>静态方法（Static Methods）：属于类而不是类的实例，可以直接通过类名调用。</li>
+</ol>
+<h3 id="静态字段"><a href="#静态字段" class="headerlink" title="静态字段"></a>静态字段</h3><p>特点</p>
+<ol>
+<li>使用 static 关键字声明。</li>
+<li>所有实例共享同一个静态字段。</li>
+<li>可以通过类名直接访问，无需创建类的实例。</li>
+<li>通常用于表示所有实例共有的属性。</li>
+</ol>
+<p>示例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Counter</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 静态字段</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Counter</span><span class="params">()</span> &#123;</span><br><span class="line">        count++; <span class="comment">// 每创建一个实例，count 就增加1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Counter</span> <span class="variable">c1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Counter</span>();</span><br><span class="line">        <span class="type">Counter</span> <span class="variable">c2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Counter</span>();</span><br><span class="line">        System.out.println(Counter.count); <span class="comment">// 输出: 2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h3><p>特点</p>
+<ol>
+<li>使用 static 关键字声明。</li>
+<li>可以直接通过类名调用，无需创建类的实例。</li>
+<li>只能直接访问静态成员（静态字段和静态方法）。</li>
+<li>不能使用 this 关键字。</li>
+</ol>
+<p>示例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MathUtils</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">double</span> <span class="variable">PI</span> <span class="operator">=</span> <span class="number">3.14159</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">double</span> <span class="title function_">calculateCircleArea</span><span class="params">(<span class="type">double</span> radius)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> PI * radius * radius;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> MathUtils.add(<span class="number">5</span>, <span class="number">3</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;Sum: &quot;</span> + sum); <span class="comment">// 输出: Sum: 8</span></span><br><span class="line"></span><br><span class="line">        <span class="type">double</span> <span class="variable">area</span> <span class="operator">=</span> MathUtils.calculateCircleArea(<span class="number">2</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;Circle Area: &quot;</span> + area); <span class="comment">// 输出: Circle Area: 12.56636</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="静态初始化块"><a href="#静态初始化块" class="headerlink" title="静态初始化块"></a>静态初始化块</h3><p>静态初始化块用于初始化静态字段，它在类加载时执行。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StaticBlockExample</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span>[] numbers;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Static block is executed&quot;</span>);</span><br><span class="line">        numbers = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">5</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; numbers.length; i++) &#123;</span><br><span class="line">            numbers[i] = i * <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="静态导入"><a href="#静态导入" class="headerlink" title="静态导入"></a>静态导入</h3><p>静态导入允许你直接使用静态成员，而不需要类名限定。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.Math.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StaticImportExample</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">double</span> <span class="variable">result</span> <span class="operator">=</span> sqrt(<span class="number">25</span>); <span class="comment">// 直接使用 Math.sqrt()</span></span><br><span class="line">        System.out.println(result); <span class="comment">// 输出: 5.0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ol>
+<li>工具类：如 Math 类，包含许多静态方法。</li>
+<li>常量：如 Math.PI。</li>
+<li>工厂方法：用于创建对象的静态方法。</li>
+<li>单例模式：使用静态字段存储唯一实例。</li>
+</ol>
+<p><strong>注意事项</strong></p>
+<ol>
+<li>静态方法不能访问非静态成员。</li>
+<li>静态方法不能被重写，但可以被隐藏。</li>
+<li>过度使用静态可能导致代码难以测试和维护。</li>
+</ol>
 
 </div>
 
@@ -426,13 +470,18 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/08/03/Java/3.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.2%20%E6%96%B9%E6%B3%95/">
+              <a href="/2024/08/03/Java/3.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.10%20%E5%86%85%E9%83%A8%E7%B1%BB/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  3.1.2 方法
+                  3.1.10 内部类
               </a>
             
         </div>
         <div class="item right">
+            
+              <a href="/2024/08/03/Java/3.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.8%20%E6%8E%A5%E5%8F%A3/">
+                3.1.8 接口
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
             
         </div>
     </div>

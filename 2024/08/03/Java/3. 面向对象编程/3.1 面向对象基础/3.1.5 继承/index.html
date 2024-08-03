@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		Hello World | 
+		3.1.5 继承 | 
 	 
 	Yuwl&#39;s Notes
 	</title>
@@ -196,7 +196,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2024/08/03/Java/3.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.5%20%E7%BB%A7%E6%89%BF/">
                      
 										    3.1.5 继承
@@ -362,7 +362,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2024/08/03/hello-world/">
                      
 										    Hello World
@@ -379,7 +379,7 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<h1 id="article-title">
-	Hello World
+	3.1.5 继承
 </h1>
 
 <!-- meta -->
@@ -387,16 +387,33 @@
 	
 
 	<span>Yuwl</span>
-	<span>2024-08-03 08:18:50</span>
+	<span>2024-08-03 10:30:17</span>
 
   <div id="article-categories">
     
 		  <span>Categories：</span>
       
+          
+              <span>
+                  <i class="fa fa-folder" aria-hidden="true">
+                  <a href="/categories/Java/">Java</a>
+                  </i>
+                
+              </span>
+          
+      
     
 
     
 		    <span>Tags：</span>
+        
+            
+                <span>
+                    <i class="fa fa-tag" aria-hidden="true">
+                    <a href="/tags/java/">java</a>
+                    </i>
+                </span>
+            
         
     
   </div>
@@ -405,19 +422,39 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+	<p>现在我们来学习 Java 面向对象中的继承。</p>
+<h3 id="什么是继承？"><a href="#什么是继承？" class="headerlink" title="什么是继承？"></a>什么是继承？</h3><p>继承是一种机制，允许一个类（称为子类或派生类）基于另一个类（称为父类或基类）来定义。子类继承父类的属性和方法，同时可以添加自己的新特性。</p>
+<h3 id="继承的基本语法"><a href="#继承的基本语法" class="headerlink" title="继承的基本语法"></a>继承的基本语法</h3><p>在Java中，使用 extends 关键字来实现继承。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ChildClass</span> <span class="keyword">extends</span> <span class="title class_">ParentClass</span> &#123;</span><br><span class="line">    <span class="comment">// 子类的内容</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="继承的示例"><a href="#继承的示例" class="headerlink" title="继承的示例"></a>继承的示例</h3><p>让我们通过一个简单的例子来理解继承：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    String name;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(name + <span class="string">&quot; is eating.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(name + <span class="string">&quot; is sleeping.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 子类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">bark</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(name + <span class="string">&quot; is barking.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个例子中，Dog 类继承了 Animal 类的所有公共和受保护的成员。</p>
+<h3 id="使用继承"><a href="#使用继承" class="headerlink" title="使用继承"></a>使用继承</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Dog</span> <span class="variable">myDog</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Dog</span>();</span><br><span class="line">        myDog.name = <span class="string">&quot;Buddy&quot;</span>;</span><br><span class="line">        </span><br><span class="line">        myDog.eat();   <span class="comment">// 继承自Animal类</span></span><br><span class="line">        myDog.sleep(); <span class="comment">// 继承自Animal类</span></span><br><span class="line">        myDog.bark();  <span class="comment">// Dog类自己的方法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="继承的特点"><a href="#继承的特点" class="headerlink" title="继承的特点"></a>继承的特点</h3><ol>
+<li>单继承：Java只支持单继承，即一个类只能直接继承一个父类。</li>
+<li>方法重写：子类可以重写（覆盖）父类的方法。</li>
+<li>构造方法：子类不能继承父类的构造方法，但可以通过 super() 调用父类构造方法。</li>
+<li>protected成员：子类可以访问父类的protected成员。</li>
+<li>私有成员：子类不能直接访问父类的私有成员。</li>
+</ol>
+<h3 id="方法重写"><a href="#方法重写" class="headerlink" title="方法重写"></a>方法重写</h3><p>子类可以提供父类方法的特定实现，这称为方法重写。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Cat</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(name + <span class="string">&quot; is eating fish.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="super-关键字"><a href="#super-关键字" class="headerlink" title="super 关键字"></a>super 关键字</h3><p>super 关键字用于引用父类的成员。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Bird</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.eat(); <span class="comment">// 调用父类的eat方法</span></span><br><span class="line">        System.out.println(name + <span class="string">&quot; is eating seeds.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="构造方法和继承"><a href="#构造方法和继承" class="headerlink" title="构造方法和继承"></a>构造方法和继承</h3><p>子类的构造方法必须调用父类的构造方法，可以显式使用 super() 或隐式调用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Fish</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    String waterType;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Fish</span><span class="params">(String name, String waterType)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(name); <span class="comment">// 调用父类构造方法</span></span><br><span class="line">        <span class="built_in">this</span>.waterType = waterType;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="继承的优点"><a href="#继承的优点" class="headerlink" title="继承的优点"></a>继承的优点</h3><ol>
+<li>代码重用：减少重复代码。</li>
+<li>建立类层次：创建更具组织性的代码结构。</li>
+<li>多态性：通过继承实现多态。</li>
+</ol>
+<p><strong>注意事项</strong></p>
+<ol>
+<li>避免过度使用继承，深层次的继承可能导致代码难以理解和维护。</li>
+<li>考虑使用组合作为继承的替代方案。</li>
+<li>遵循”是一个”关系来决定是否使用继承。</li>
+</ol>
 
 </div>
 
@@ -426,13 +463,18 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/08/03/Java/3.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.2%20%E6%96%B9%E6%B3%95/">
+              <a href="/2024/08/03/Java/3.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.6%20%E5%A4%9A%E6%80%81/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  3.1.2 方法
+                  3.1.6 多态
               </a>
             
         </div>
         <div class="item right">
+            
+              <a href="/2024/08/03/Java/3.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.4%20%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD/">
+                3.1.4 方法重载
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
             
         </div>
     </div>

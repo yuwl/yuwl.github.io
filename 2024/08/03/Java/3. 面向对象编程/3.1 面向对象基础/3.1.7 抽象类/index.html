@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		Hello World | 
+		3.1.7 抽象类 | 
 	 
 	Yuwl&#39;s Notes
 	</title>
@@ -218,7 +218,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2024/08/03/Java/3.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.7%20%E6%8A%BD%E8%B1%A1%E7%B1%BB/">
                      
 										    3.1.7 抽象类
@@ -362,7 +362,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2024/08/03/hello-world/">
                      
 										    Hello World
@@ -379,7 +379,7 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<h1 id="article-title">
-	Hello World
+	3.1.7 抽象类
 </h1>
 
 <!-- meta -->
@@ -387,16 +387,33 @@
 	
 
 	<span>Yuwl</span>
-	<span>2024-08-03 08:18:50</span>
+	<span>2024-08-03 10:30:42</span>
 
   <div id="article-categories">
     
 		  <span>Categories：</span>
       
+          
+              <span>
+                  <i class="fa fa-folder" aria-hidden="true">
+                  <a href="/categories/Java/">Java</a>
+                  </i>
+                
+              </span>
+          
+      
     
 
     
 		    <span>Tags：</span>
+        
+            
+                <span>
+                    <i class="fa fa-tag" aria-hidden="true">
+                    <a href="/tags/java/">java</a>
+                    </i>
+                </span>
+            
         
     
   </div>
@@ -405,19 +422,37 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+	<p>现在我们来学习 Java 面向对象中的抽象类。</p>
+<h3 id="什么是抽象类？"><a href="#什么是抽象类？" class="headerlink" title="什么是抽象类？"></a>什么是抽象类？</h3><p>抽象类是一种不能被实例化的类，它主要用于定义子类的通用特征。抽象类可以包含抽象方法（没有实现的方法）和具体方法（有实现的方法）。</p>
+<h3 id="抽象类的特点"><a href="#抽象类的特点" class="headerlink" title="抽象类的特点"></a>抽象类的特点</h3><ol>
+<li>使用 abstract 关键字声明。</li>
+<li>可以包含抽象方法和非抽象方法。</li>
+<li>不能被实例化。</li>
+<li>可以有构造方法。</li>
+<li>可以包含成员变量。</li>
+<li>可以包含静态方法。</li>
+</ol>
+<h3 id="抽象类的语法"><a href="#抽象类的语法" class="headerlink" title="抽象类的语法"></a>抽象类的语法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">AbstractClassName</span> &#123;</span><br><span class="line">    <span class="comment">// 抽象方法</span></span><br><span class="line">    <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">abstractMethod</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 具体方法</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">concreteMethod</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;This is a concrete method.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="抽象类的示例"><a href="#抽象类的示例" class="headerlink" title="抽象类的示例"></a>抽象类的示例</h3><p>让我们通过一个简单的例子来理解抽象类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 抽象类</span></span><br><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    String name;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 构造方法</span></span><br><span class="line">    Animal(String name) &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 抽象方法</span></span><br><span class="line">    <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">makeSound</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 具体方法</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(name + <span class="string">&quot; is eating.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体类继承抽象类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    Dog(String name) &#123;</span><br><span class="line">        <span class="built_in">super</span>(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 实现抽象方法</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">makeSound</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(name + <span class="string">&quot; barks.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Cat</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    Cat(String name) &#123;</span><br><span class="line">        <span class="built_in">super</span>(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 实现抽象方法</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">makeSound</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(name + <span class="string">&quot; meows.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="使用抽象类"><a href="#使用抽象类" class="headerlink" title="使用抽象类"></a>使用抽象类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// Animal animal = new Animal(&quot;Generic Animal&quot;); // 错误：不能实例化抽象类</span></span><br><span class="line"></span><br><span class="line">        <span class="type">Animal</span> <span class="variable">dog</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Dog</span>(<span class="string">&quot;Buddy&quot;</span>);</span><br><span class="line">        <span class="type">Animal</span> <span class="variable">cat</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cat</span>(<span class="string">&quot;Whiskers&quot;</span>);</span><br><span class="line"></span><br><span class="line">        dog.makeSound(); <span class="comment">// 输出: Buddy barks.</span></span><br><span class="line">        dog.eat();       <span class="comment">// 输出: Buddy is eating.</span></span><br><span class="line"></span><br><span class="line">        cat.makeSound(); <span class="comment">// 输出: Whiskers meows.</span></span><br><span class="line">        cat.eat();       <span class="comment">// 输出: Whiskers is eating.</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="抽象类的优点"><a href="#抽象类的优点" class="headerlink" title="抽象类的优点"></a>抽象类的优点</h3><ol>
+<li>代码重用：抽象类可以包含通用的实现，子类可以直接使用。</li>
+<li>强制实现：子类必须实现抽象类中的所有抽象方法。</li>
+<li>设计灵活性：可以定义必须由子类实现的方法，同时提供一些通用的实现。</li>
+<li>多态性：可以通过抽象类类型的引用来引用其子类对象。</li>
+</ol>
+<h3 id="抽象类-vs-接口"><a href="#抽象类-vs-接口" class="headerlink" title="抽象类 vs 接口"></a>抽象类 vs 接口</h3><ol>
+<li>抽象类可以有构造方法，接口不能。</li>
+<li>抽象类可以包含非抽象方法，接口中的方法默认是抽象的（Java 8之前）。</li>
+<li>抽象类可以有成员变量，接口中的变量默认是 public static final 的。</li>
+<li>一个类只能继承一个抽象类，但可以实现多个接口。</li>
+</ol>
+<h3 id="使用抽象类的场景"><a href="#使用抽象类的场景" class="headerlink" title="使用抽象类的场景"></a>使用抽象类的场景</h3><ol>
+<li>当你想要在几个相关的类之间共享代码。</li>
+<li>当你期望扩展抽象类的类有许多共同的方法或字段，或者需要非public的访问修饰符。</li>
+<li>当你想声明非静态或非常量字段。</li>
+</ol>
 
 </div>
 
@@ -426,13 +461,18 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/08/03/Java/3.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.2%20%E6%96%B9%E6%B3%95/">
+              <a href="/2024/08/03/Java/3.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.8%20%E6%8E%A5%E5%8F%A3/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  3.1.2 方法
+                  3.1.8 接口
               </a>
             
         </div>
         <div class="item right">
+            
+              <a href="/2024/08/03/Java/3.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.6%20%E5%A4%9A%E6%80%81/">
+                3.1.6 多态
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
             
         </div>
     </div>
