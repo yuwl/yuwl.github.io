@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		2.2.7 数组类型 | 
+		8.7 equals和hashCode方法 | 
 	 
 	Yuwl&#39;s Notes
 	</title>
@@ -262,7 +262,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2024/08/01/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.7%20%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B/">
                      
 										    2.2.7 数组类型
@@ -816,7 +816,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2024/08/07/Java/8.%20%E9%9B%86%E5%90%88/8.7%20equals%E5%92%8ChashCode%E6%96%B9%E6%B3%95/">
                      
 										    8.7 equals和hashCode方法
@@ -852,7 +852,7 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<h1 id="article-title">
-	2.2.7 数组类型
+	8.7 equals和hashCode方法
 </h1>
 
 <!-- meta -->
@@ -860,7 +860,7 @@
 	
 
 	<span>Yuwl</span>
-	<span>2024-08-01 14:03:18</span>
+	<span>2024-08-07 09:02:31</span>
 
   <div id="article-categories">
     
@@ -895,53 +895,54 @@
 
 <!-- content -->
 <div id="article-content">
-	<p>现在我们来学习 Java 中的数组类型。</p>
-<h3 id="1-什么是数组？"><a href="#1-什么是数组？" class="headerlink" title="1. 什么是数组？"></a>1. 什么是数组？</h3><p>数组是存储同一类型数据的集合。你可以把它想象成一个拥有多个房间的房子，每个房间都只能住同一个类型的人，比如只能住猫或者只能住狗。</p>
-<h3 id="2-数组的声明："><a href="#2-数组的声明：" class="headerlink" title="2. 数组的声明："></a>2. 数组的声明：</h3><p>声明数组需要指定数组类型和数组名，例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] numbers; <span class="comment">// 声明一个名为 numbers 的整数类型数组</span></span><br><span class="line">String[] names; <span class="comment">// 声明一个名为 names 的字符串类型数组</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-数组的创建："><a href="#3-数组的创建：" class="headerlink" title="3. 数组的创建："></a>3. 数组的创建：</h3><p>创建数组需要使用 new 关键字，并指定数组的长度，例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">numbers = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">5</span>]; <span class="comment">// 创建一个长度为 5 的整数类型数组</span></span><br><span class="line">names = <span class="keyword">new</span> <span class="title class_">String</span>[<span class="number">3</span>]; <span class="comment">// 创建一个长度为 3 的字符串类型数组</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="4-数组的初始化："><a href="#4-数组的初始化：" class="headerlink" title="4. 数组的初始化："></a>4. 数组的初始化：</h3><p>在创建数组的同时，也可以直接初始化数组元素，例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] numbers = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;; <span class="comment">// 创建并初始化一个整数类型数组</span></span><br><span class="line">String[] names = &#123;<span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;Bob&quot;</span>, <span class="string">&quot;Charlie&quot;</span>&#125;; <span class="comment">// 创建并初始化一个字符串类型数组</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="5-数组的访问："><a href="#5-数组的访问：" class="headerlink" title="5. 数组的访问："></a>5. 数组的访问：</h3><p>使用数组的索引来访问数组元素，索引从 0 开始，例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(numbers[<span class="number">0</span>]); <span class="comment">// 输出：1</span></span><br><span class="line">System.out.println(names[<span class="number">2</span>]); <span class="comment">// 输出：Charlie</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="6-数组的长度："><a href="#6-数组的长度：" class="headerlink" title="6. 数组的长度："></a>6. 数组的长度：</h3><p>使用 length 属性获取数组的长度，例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">length</span> <span class="operator">=</span> numbers.length; <span class="comment">// length = 5</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="7-常见操作："><a href="#7-常见操作：" class="headerlink" title="7. 常见操作："></a>7. 常见操作：</h3><ul>
-<li>遍历数组： 使用 <code>for</code> 循环遍历数组中的所有元素。</li>
-<li>修改数组元素： 使用索引直接修改数组元素的值。</li>
-<li>数组排序： 使用 <code>Arrays.sort()</code> 方法对数组进行排序。</li>
+	<p>现在我们来学习 Java 中的 equals和hashCode方法。</p>
+<h3 id="equals方法"><a href="#equals方法" class="headerlink" title="equals方法"></a>equals方法</h3><h4 id="1-什么是equals方法？"><a href="#1-什么是equals方法？" class="headerlink" title="1. 什么是equals方法？"></a>1. 什么是equals方法？</h4><p>在Java中，equals方法用于比较两个对象是否相等。它定义在Object类中，所有Java对象都继承这个方法。默认的实现比较的是对象的内存地址，所以如果你不重写equals方法，只有两个对象是同一个实例时，它们才会被认为是相等的。</p>
+<h4 id="2-equals方法的默认实现"><a href="#2-equals方法的默认实现" class="headerlink" title="2. equals方法的默认实现"></a>2. equals方法的默认实现</h4><p>在Object类中，equals方法是这样实现的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object obj)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="built_in">this</span> == obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这意味着默认的equals方法仅当两个引用指向同一个对象时返回true。</p>
+<h4 id="3-为什么重写equals方法？"><a href="#3-为什么重写equals方法？" class="headerlink" title="3. 为什么重写equals方法？"></a>3. 为什么重写equals方法？</h4><p>在实际应用中，我们常常需要比较对象的内容而不是它们的内存地址。例如，比较两个Person对象是否具有相同的名字和年龄。这时我们就需要重写equals方法。</p>
+<h4 id="4-重写equals方法的步骤"><a href="#4-重写equals方法的步骤" class="headerlink" title="4. 重写equals方法的步骤"></a>4. 重写equals方法的步骤</h4><p>重写equals方法时，需要遵循以下几个步骤和原则：</p>
+<ul>
+<li>自反性：一个对象必须等于自身。</li>
+<li>对称性：如果a.equals(b)为true，那么b.equals(a)也必须为true。</li>
+<li>传递性：如果a.equals(b)为true且b.equals(c)为true，那么a.equals(c)也必须为true。</li>
+<li>一致性：如果两个对象是相等的，那么它们始终是相等的，只要它们的状态没有改变。</li>
+<li>非空性：a.equals(null)必须返回false。</li>
 </ul>
-<h3 id="8-示例："><a href="#8-示例：" class="headerlink" title="8. 示例："></a>8. 示例：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 创建并初始化一个整数类型数组</span></span><br><span class="line">        <span class="type">int</span>[] numbers = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;; </span><br><span class="line"></span><br><span class="line">        <span class="comment">// 遍历数组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; numbers.length; i++) &#123;</span><br><span class="line">            System.out.println(numbers[i]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 修改数组元素</span></span><br><span class="line">        numbers[<span class="number">0</span>] = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 再次遍历数组</span></span><br><span class="line">        System.out.println(<span class="string">&quot;修改后的数组：&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> number : numbers) &#123;</span><br><span class="line">            System.out.println(number);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 对数组进行排序</span></span><br><span class="line">        Arrays.sort(numbers);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 打印排序后的数组</span></span><br><span class="line">        System.out.println(<span class="string">&quot;排序后的数组：&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> number : numbers) &#123;</span><br><span class="line">            System.out.println(number);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上 是 Java 中数组的基本用法，包括声明、创建、初始化、访问、遍历、修改、排序等。掌握数组的基本用法，对学习 Java 编程非常重要。</p>
-<p> Java 中多维数组的创建和使用。</p>
-<h3 id="1-多维数组的概念："><a href="#1-多维数组的概念：" class="headerlink" title="1. 多维数组的概念："></a>1. 多维数组的概念：</h3><p>多维数组可以理解成数组的数组。就像一个表格，每一行是一个数组，而整个表格就是一个多维数组。</p>
-<h3 id="2-创建多维数组："><a href="#2-创建多维数组：" class="headerlink" title="2. 创建多维数组："></a>2. 创建多维数组：</h3><p>声明： 声明多维数组时，需要指定数组的维度，例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[][] matrix; <span class="comment">// 声明一个二维数组，用于存储矩阵数据</span></span><br><span class="line">String[][] names; <span class="comment">// 声明一个二维数组，用于存储多个人的姓名</span></span><br></pre></td></tr></table></figure>
-
-<p>创建： 使用 new 关键字创建多维数组，并指定每个维度的长度，例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">matrix = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>][<span class="number">4</span>]; <span class="comment">// 创建一个 3 行 4 列的二维整数数组</span></span><br><span class="line">names = <span class="keyword">new</span> <span class="title class_">String</span>[<span class="number">2</span>][<span class="number">3</span>]; <span class="comment">// 创建一个 2 行 3 列的二维字符串数组</span></span><br></pre></td></tr></table></figure>
-
-<p>直接初始化： 在创建的同时也可以直接初始化多维数组，例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[][] matrix = &#123;</span><br><span class="line">    &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;, </span><br><span class="line">    &#123;<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>&#125;, </span><br><span class="line">    &#123;<span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-使用多维数组："><a href="#3-使用多维数组：" class="headerlink" title="3. 使用多维数组："></a>3. 使用多维数组：</h3><p>访问元素： 使用多个索引来访问多维数组中的元素，例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">value</span> <span class="operator">=</span> matrix[<span class="number">1</span>][<span class="number">2</span>]; <span class="comment">// 获取矩阵第二行第三列的值</span></span><br><span class="line"><span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> names[<span class="number">0</span>][<span class="number">1</span>]; <span class="comment">// 获取第一个人的第二个姓名</span></span><br></pre></td></tr></table></figure>
-
-<p>遍历多维数组： 使用嵌套循环来遍历多维数组中的所有元素，例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; matrix[i].length; j++) &#123;</span><br><span class="line">        System.out.print(matrix[i][j] + <span class="string">&quot; &quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(); <span class="comment">// 换行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>修改元素： 可以使用索引直接修改多维数组元素的值，例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">matrix[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">100</span>; <span class="comment">// 修改矩阵第一行第一列的值</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="4-示例："><a href="#4-示例：" class="headerlink" title="4. 示例："></a>4. 示例：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 创建一个二维整数数组，表示一个 3x4 的矩阵</span></span><br><span class="line">        <span class="type">int</span>[][] matrix = &#123;</span><br><span class="line">            &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;,</span><br><span class="line">            &#123;<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>&#125;,</span><br><span class="line">            &#123;<span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>&#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 遍历并打印矩阵中的所有元素</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; matrix[i].length; j++) &#123;</span><br><span class="line">                System.out.print(matrix[i][j] + <span class="string">&quot; &quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(); <span class="comment">// 换行</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 修改矩阵中的元素</span></span><br><span class="line">        matrix[<span class="number">1</span>][<span class="number">2</span>] = <span class="number">20</span>; </span><br><span class="line"></span><br><span class="line">        <span class="comment">// 再次遍历并打印矩阵</span></span><br><span class="line">        System.out.println(<span class="string">&quot;修改后的矩阵：&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; matrix[i].length; j++) &#123;</span><br><span class="line">                System.out.print(matrix[i][j] + <span class="string">&quot; &quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(); <span class="comment">// 换行</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-总结："><a href="#5-总结：" class="headerlink" title="5. 总结："></a>5. 总结：</h3><p>多维数组在 Java 中非常常见，用于存储和处理二维或多维数据，例如矩阵、表格、图像等。掌握多维数组的创建和使用，对学习 Java 编程非常重要。</p>
+<h4 id="5-示例代码"><a href="#5-示例代码" class="headerlink" title="5. 示例代码"></a>5. 示例代码</h4><p>我们以一个Person类为例，来展示如何重写equals方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(String name, <span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object obj)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span> == obj) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (obj == <span class="literal">null</span> || getClass() != obj.getClass()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> (Person) obj;</span><br><span class="line">        <span class="keyword">return</span> age == person.age &amp;&amp; Objects.equals(name, person.name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Objects.hash(name, age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// getters and setters omitted for brevity</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="6-代码解释"><a href="#6-代码解释" class="headerlink" title="6. 代码解释"></a>6. 代码解释</h4><ul>
+<li>对象相同检查：首先检查当前对象是否与传入的对象是同一个。如果是，则返回true。</li>
+<li>对象类型检查：检查传入对象是否为null或者类型是否匹配。如果不匹配，返回false。</li>
+<li>属性比较：将两个对象的属性逐一比较。这里我们比较name和age。</li>
+</ul>
+<h4 id="7-hashCode方法的重要性"><a href="#7-hashCode方法的重要性" class="headerlink" title="7. hashCode方法的重要性"></a>7. hashCode方法的重要性</h4><p>每当你重写equals方法时，也应该重写hashCode方法。这是因为在某些集合（例如HashSet和HashMap）中，hashCode用于确定对象的存储位置。如果两个对象根据equals方法是相等的，那么它们的hashCode也必须相等。</p>
+<h3 id="hashCode方法"><a href="#hashCode方法" class="headerlink" title="hashCode方法"></a>hashCode方法</h3><h4 id="1-什么是hashCode方法？"><a href="#1-什么是hashCode方法？" class="headerlink" title="1. 什么是hashCode方法？"></a>1. 什么是hashCode方法？</h4><p>在Java中，hashCode方法用于返回对象的哈希码值。这个哈希码是一个整数，用于在哈希表（如HashMap、HashSet等）中快速查找对象。hashCode方法定义在Object类中，所有Java对象都继承这个方法。</p>
+<h4 id="2-hashCode方法的默认实现"><a href="#2-hashCode方法的默认实现" class="headerlink" title="2. hashCode方法的默认实现"></a>2. hashCode方法的默认实现</h4><p>在Object类中，hashCode方法是这样实现的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">native</span> <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span>;</span><br></pre></td></tr></table></figure>
+<p>这个方法返回对象的内存地址转换后的哈希值。不同对象的哈希码通常不同，但不能保证。</p>
+<h4 id="3-为什么重写hashCode方法？"><a href="#3-为什么重写hashCode方法？" class="headerlink" title="3. 为什么重写hashCode方法？"></a>3. 为什么重写hashCode方法？</h4><p>当你重写equals方法时，你也需要重写hashCode方法，以确保对象在基于哈希的集合（如HashMap和HashSet）中能够正常工作。两个对象如果通过equals方法被认为是相等的，那么它们的hashCode方法也必须返回相同的整数。</p>
+<h4 id="4-重写hashCode方法的规则"><a href="#4-重写hashCode方法的规则" class="headerlink" title="4. 重写hashCode方法的规则"></a>4. 重写hashCode方法的规则</h4><p>重写hashCode方法时，需要遵循以下几个规则：</p>
+<ul>
+<li>一致性：同一个对象多次调用hashCode方法，应该始终返回相同的整数，前提是对象的属性没有被修改。</li>
+<li>相等对象的哈希码相等：如果两个对象通过equals方法比较是相等的，那么它们的哈希码必须相等。</li>
+<li>不相等对象的哈希码不要求不同：如果两个对象通过equals方法比较是不相等的，它们的哈希码不一定不同。但是，为了提高哈希表的性能，不相等对象的哈希码应尽可能不同。</li>
+</ul>
+<h4 id="5-示例代码-1"><a href="#5-示例代码-1" class="headerlink" title="5. 示例代码"></a>5. 示例代码</h4><p>我们以一个Person类为例，来展示如何重写hashCode方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(String name, <span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object obj)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span> == obj) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (obj == <span class="literal">null</span> || getClass() != obj.getClass()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> (Person) obj;</span><br><span class="line">        <span class="keyword">return</span> age == person.age &amp;&amp; Objects.equals(name, person.name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Objects.hash(name, age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// getters and setters omitted for brevity</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="6-代码解释-1"><a href="#6-代码解释-1" class="headerlink" title="6. 代码解释"></a>6. 代码解释</h4><p>在上述代码中，我们使用Objects.hash方法来生成hashCode，它会根据name和age两个属性生成一个哈希码。</p>
+<ul>
+<li>对象相同检查：首先检查当前对象是否与传入的对象是同一个。如果是，则返回true。</li>
+<li>对象类型检查：检查传入对象是否为null或者类型是否匹配。如果不匹配，返回false。</li>
+<li>属性比较：将两个对象的属性逐一比较。这里我们比较name和age。</li>
+<li>生成哈希码：使用Objects.hash方法生成哈希码。</li>
+</ul>
+<h4 id="7-如何选择哈希算法"><a href="#7-如何选择哈希算法" class="headerlink" title="7. 如何选择哈希算法"></a>7. 如何选择哈希算法</h4><p>选择哈希算法时，可以考虑以下几点：</p>
+<ul>
+<li>简单性：算法应该简单且高效。</li>
+<li>分布性：算法应生成均匀分布的哈希码，尽量减少哈希冲突。</li>
+<li>速度：算法应该在合理时间内生成哈希码。</li>
+</ul>
 
 </div>
 
@@ -950,16 +951,11 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2024/08/01/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.3%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/2.3.1%20%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA/">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  2.3.1 输入和输出
-              </a>
-            
         </div>
         <div class="item right">
             
-              <a href="/2024/08/01/Java/2.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.6%20%E5%AD%97%E7%AC%A6%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                2.2.6 字符和字符串
+              <a href="/2024/08/05/Java/8.%20%E9%9B%86%E5%90%88/8.6%20%E9%9B%86%E5%90%88%E5%B7%A5%E5%85%B7%E7%B1%BB/">
+                8.6 集合工具类
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
