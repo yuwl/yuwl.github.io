@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		3.2.4 JavaBean | 
+	 
+	Yuwl&#39;s Notes
+	</title>
+	
+	<!-- keywords,description -->
+	
+	
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "wujun234.com";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js"></script>
+
+	
+	
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/" class="logo">Yuwl's Notes</a>
+
+	<ul id="menu">
+    
+
+    
+      <li class="menu-item">
+        <a href="/tags" class="menu-item-link">Tags</a>
+      </li>
+    
+
+    
+      <li class="menu-item">
+        <a href="/categories" class="menu-item-link">Categories</a>
+      </li>
+    
+
+    
+  
+    
+      <li class="menu-item">
+        <a href='https://github.com/yuwl' class="menu-item-link" target="_blank">
+          <i class="fa fa-github fa-2x"></i>
+        </a>
+      </li>
+    
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="Press Enter to search">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Java
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/07/31/Java/01.%20java%E7%AE%80%E4%BB%8B/">
+                     
+										    01. java简介
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										02. 快速入门
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										2.1 搭建开发环境
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/07/31/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.1%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/2.1.1%20%E5%AE%89%E8%A3%85JDK/">
+                     
+										    2.1.1 安装JDK
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/07/31/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.1%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/2.1.2%20%E7%AC%AC%E4%B8%80%E4%B8%AAJava%E7%A8%8B%E5%BA%8F/">
+                     
+										    2.1.2 第一个Java程序
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/07/31/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.1%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/2.1.3%20%E4%BD%BF%E7%94%A8IDE/">
+                     
+										    2.1.3 使用IDE
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										2.2 Java程序基础
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.1%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/">
+                     
+										    2.2.1 Java程序基础
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.2%20%E5%8F%98%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+                     
+										    2.2.2 变量和数据类型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.3%20%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97/">
+                     
+										    2.2.3 整数运算
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.4%20%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97/">
+                     
+										    2.2.4 浮点数运算
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.5%20%E5%B8%83%E5%B0%94%E8%BF%90%E7%AE%97/">
+                     
+										    2.2.5 布尔运算
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.6%20%E5%AD%97%E7%AC%A6%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                     
+										    2.2.6 字符和字符串
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.7%20%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B/">
+                     
+										    2.2.7 数组类型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										2.3 流程控制
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.3%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/2.3.1%20%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA/">
+                     
+										    2.3.1 输入和输出
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.3%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/2.3.2%20if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/">
+                     
+										    2.3.2 if条件判断
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.3%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/2.3.3%20switch%E5%A4%9A%E9%87%8D%E9%80%89%E6%8B%A9/">
+                     
+										    2.3.3 switch多重选择
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.3%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/2.3.4%20while%E5%BE%AA%E7%8E%AF/">
+                     
+										    2.3.4 while循环
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/02/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.3%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/2.3.5%20do-while%E5%BE%AA%E7%8E%AF/">
+                     
+										    2.3.5 do-while循环
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/02/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.3%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/2.3.6%20for%E5%BE%AA%E7%8E%AF/">
+                     
+										    2.3.6 for循环
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/02/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.3%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/2.3.7%20break%E5%92%8Ccontinue/">
+                     
+										    2.3.7 break和continue
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										03. 面向对象编程
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										3.1 面向对象基础
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">
+                     
+										    3.1.1 面向对象编程编程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.2%20%E6%96%B9%E6%B3%95/">
+                     
+										    3.1.2 方法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.3%20%E7%BB%A7%E6%89%BF/">
+                     
+										    3.1.3 继承
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.4%20%E5%A4%9A%E6%80%81/">
+                     
+										    3.1.4 多态
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.5%20%E6%8A%BD%E8%B1%A1%E7%B1%BB/">
+                     
+										    3.1.5 抽象类
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.6%20%E6%8E%A5%E5%8F%A3/">
+                     
+										    3.1.6 接口
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.7%20%E9%9D%99%E6%80%81%E5%AD%97%E6%AE%B5%E5%92%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95/">
+                     
+										    3.1.7 静态字段和静态方法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.8%20%E5%86%85%E9%83%A8%E7%B1%BB/">
+                     
+										    3.1.8 内部类
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										3.2 Java核心类
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.1%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E7%BC%96%E7%A0%81/">
+                     
+										    3.2.1 字符串和编码
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.2%20StringBuilder/">
+                     
+										    3.2.2 StringBuilder 和 StringBuffer
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.3%20%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B/">
+                     
+										    3.2.3 包装类型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.4%20JavaBean/">
+                     
+										    3.2.4 JavaBean
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.5%20%E6%9E%9A%E4%B8%BE%E7%B1%BB/">
+                     
+										    3.2.5 枚举类
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.6%20BigInteger/">
+                     
+										    3.2.6 BigInteger
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.7%20BigDecimal/">
+                     
+										    3.2.7 BigDecimal
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.8%20%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB/">
+                     
+										    3.2.8 常用工具类
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										04. 异常处理
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/04.%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/4.1%20Java%E7%9A%84%E5%BC%82%E5%B8%B8/">
+                     
+										    4.1 Java的异常
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/04.%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/4.2%20%E4%BD%BF%E7%94%A8%E6%96%AD%E8%A8%80/">
+                     
+										    4.2 使用断言
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/04.%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/4.3%20%E4%BD%BF%E7%94%A8JDK-Logging/">
+                     
+										    4.3 使用JDK Logging
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/04.%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/4.4%20%E4%BD%BF%E7%94%A8Commons-Logging/">
+                     
+										    4.4 使用Commons Logging
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/04.%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/4.5%20%E4%BD%BF%E7%94%A8Log4j/">
+                     
+										    4.5 使用Log4j
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/04.%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/4.6%20%E4%BD%BF%E7%94%A8SLF4J/">
+                     
+										    4.6 使用SLF4J
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										05. 反射
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/04/Java/05.%20%E5%8F%8D%E5%B0%84/5.1%20%E5%8F%8D%E5%B0%84/">
+                     
+										    5.1 反射
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/04/Java/05.%20%E5%8F%8D%E5%B0%84/5.2%20%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/">
+                     
+										    5.2 动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										06. 注解
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/04/Java/06.%20%E6%B3%A8%E8%A7%A3/6.1%20%E6%B3%A8%E8%A7%A3/">
+                     
+										    6.1 注解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										07. 泛型
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/04/Java/07.%20%E6%B3%9B%E5%9E%8B/7.1%20%E6%B3%9B%E5%9E%8B/">
+                     
+										    7.1 泛型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/04/Java/07.%20%E6%B3%9B%E5%9E%8B/7.2%20%E6%B3%9B%E5%9E%8B%E6%93%A6%E9%99%A4/">
+                     
+										    7.2 泛型擦除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										08. 集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/05/Java/08.%20%E9%9B%86%E5%90%88/8.1%20%E9%9B%86%E5%90%88/">
+                     
+										    8.1 集合
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/05/Java/08.%20%E9%9B%86%E5%90%88/8.2%20List/">
+                     
+										    8.2 List
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/05/Java/08.%20%E9%9B%86%E5%90%88/8.3%20Set/">
+                     
+										    8.3 Set
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/05/Java/08.%20%E9%9B%86%E5%90%88/8.4%20Map/">
+                     
+										    8.4 Map
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/05/Java/08.%20%E9%9B%86%E5%90%88/8.5%20Queue/">
+                     
+										    8.5 Queue
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/05/Java/08.%20%E9%9B%86%E5%90%88/8.6%20%E9%9B%86%E5%90%88%E5%B7%A5%E5%85%B7%E7%B1%BB/">
+                     
+										    8.6 集合工具类
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/07/Java/08.%20%E9%9B%86%E5%90%88/8.7%20equals%E5%92%8ChashCode%E6%96%B9%E6%B3%95/">
+                     
+										    8.7 equals和hashCode方法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										09. IO
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/07/Java/09.%20IO/9.1%20IO/">
+                     
+										    9.1 IO
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/07/Java/09.%20IO/9.2%20InputStream%E5%92%8COutputStream/">
+                     
+										    9.2 InputStream和OutputStream
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/07/Java/09.%20IO/9.3%20Reader%E5%92%8CWriter/">
+                     
+										    9.3 Reader和Writer
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/07/Java/09.%20IO/9.4%20%E5%BA%8F%E5%88%97%E5%8C%96/">
+                     
+										    9.4 序列化
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/07/Java/09.%20IO/9.5%20PrintStream%E5%92%8CPrintWriter/">
+                     
+										    9.5 PrintStream和PrintWriter
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/07/Java/09.%20IO/9.6%20File%E5%92%8CFiles/">
+                     
+										    9.6 File和Files
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/07/Java/09.%20IO/9.7%20Zip%E6%96%87%E4%BB%B6/">
+                     
+										    9.7 Zip文件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/07/Java/09.%20IO/9.8%20classpath%E8%B5%84%E6%BA%90/">
+                     
+										    9.8 classpath资源
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										10. 日期和时间
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/08/Java/10.%20%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/10.1%20%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/">
+                     
+										    10.1 日期和时间
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/08/Java/10.%20%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/10.2%20Date%E5%92%8CCalendar/">
+                     
+										    10.2 Date和Calendar
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/08/Java/10.%20%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/10.3%20LocalDateTime/">
+                     
+										    10.3 LocalDateTime
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/08/Java/10.%20%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/10.4%20DateTimeFormatter/">
+                     
+										    10.4 DateTimeFormatter
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/08/Java/10.%20%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/10.5%20Instant/">
+                     
+										    10.5 Instant
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/08/Java/10.%20%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/10.6%20ZonedDateTime/">
+                     
+										    10.6 ZonedDateTime
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/08/Java/10.%20%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/10.7%20%E6%96%B0%E6%97%A7API%E8%BD%AC%E6%8D%A2/">
+                     
+										    10.7 新旧API转换
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/09/hello-world/">
+                     
+										    Hello World
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content" class="content">
+		<h1 id="article-title">
+	3.2.4 JavaBean
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+	
+
+	<span>Yuwl</span>
+	<span>2024-08-03 11:06:39</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+          
+              <span>
+                  <i class="fa fa-folder" aria-hidden="true">
+                  <a href="/categories/Java/">Java</a>
+                  </i>
+                
+              </span>
+          
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+            
+                <span>
+                    <i class="fa fa-tag" aria-hidden="true">
+                    <a href="/tags/java/">java</a>
+                    </i>
+                </span>
+            
+        
+    
+  </div>
+
+</div>
+
+<!-- content -->
+<div id="article-content">
+	<p>现在我们来学习 Java 中的JavaBean。</p>
+<h3 id="什么是-JavaBean？"><a href="#什么是-JavaBean？" class="headerlink" title="什么是 JavaBean？"></a>什么是 JavaBean？</h3><p>JavaBean 是一种符合特定规范的 Java 类，通常用于封装数据。JavaBean 具有以下特点：</p>
+<ol>
+<li>公共的无参构造方法：JavaBean 必须有一个公共的无参构造方法。</li>
+<li>私有属性：所有属性必须是私有的，以实现封装。</li>
+<li>公共的 getter 和 setter 方法：用于访问和修改属性的值。</li>
+<li>可序列化：JavaBean 通常实现 Serializable 接口，以便可以序列化和反序列化。</li>
+</ol>
+<h3 id="JavaBean-的示例"><a href="#JavaBean-的示例" class="headerlink" title="JavaBean 的示例"></a>JavaBean 的示例</h3><p>让我们通过一个简单的示例来理解 JavaBean：</p>
+<p>创建一个 JavaBean</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.Serializable;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">serialVersionUID</span> <span class="operator">=</span> <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 无参构造方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 带参构造方法（可选）</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(String name, <span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Getter 方法</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Setter 方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Getter 方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Setter 方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(<span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 可选：重写 toString() 方法</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Person&#123;name=&#x27;&quot;</span> + name + <span class="string">&quot;&#x27;, age=&quot;</span> + age + <span class="string">&quot;&#125;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用 JavaBean</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 创建 JavaBean 实例</span></span><br><span class="line">        <span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 使用 setter 方法设置属性值</span></span><br><span class="line">        person.setName(<span class="string">&quot;Alice&quot;</span>);</span><br><span class="line">        person.setAge(<span class="number">30</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 使用 getter 方法获取属性值</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> person.getName();</span><br><span class="line">        <span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> person.getAge();</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;Name: &quot;</span> + name);</span><br><span class="line">        System.out.println(<span class="string">&quot;Age: &quot;</span> + age);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 使用带参构造方法创建 JavaBean 实例</span></span><br><span class="line">        <span class="type">Person</span> <span class="variable">anotherPerson</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Bob&quot;</span>, <span class="number">25</span>);</span><br><span class="line">        System.out.println(anotherPerson);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="JavaBean-的优点"><a href="#JavaBean-的优点" class="headerlink" title="JavaBean 的优点"></a>JavaBean 的优点</h3><ol>
+<li>封装：通过私有属性和公共 getter&#x2F;setter 方法实现数据封装。</li>
+<li>可重用：JavaBean 是可重用的组件，可以在多个应用中使用。</li>
+<li>可序列化：实现 Serializable 接口，使得 JavaBean 可以轻松地在网络上传输或持久化到文件中。</li>
+<li>易于集成：JavaBean 可以与许多框架和库（如 JSP、JSF、Spring）无缝集成。</li>
+</ol>
+<h3 id="JavaBean-的命名规范"><a href="#JavaBean-的命名规范" class="headerlink" title="JavaBean 的命名规范"></a>JavaBean 的命名规范</h3><ol>
+<li>属性名称：属性名称应遵循驼峰命名法。</li>
+<li>getter 方法：方法名以 get 开头，后跟属性名称的首字母大写。例如，属性 name 的 getter 方法是 getName()。</li>
+<li>setter 方法：方法名以 set 开头，后跟属性名称的首字母大写。例如，属性 name 的 setter 方法是 setName(String name)。</li>
+<li>布尔属性：布尔属性的 getter 方法可以以 is 开头。例如，属性 active 的 getter 方法可以是 isActive()。</li>
+</ol>
+<h3 id="JavaBean-与-POJO-的区别"><a href="#JavaBean-与-POJO-的区别" class="headerlink" title="JavaBean 与 POJO 的区别"></a>JavaBean 与 POJO 的区别</h3><ol>
+<li>POJO（Plain Old Java Object）：是一个普通的 Java 对象，没有任何特殊要求。</li>
+<li>JavaBean：是一个特殊的 POJO，遵循特定的命名和设计规范。</li>
+</ol>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
+<li>线程安全：如果在多线程环境中使用 JavaBean，确保线程安全。</li>
+<li>性能：大量使用 getter 和 setter 方法可能会影响性能，在性能敏感的场景中要谨慎使用。</li>
+<li>验证：在 setter 方法中添加验证逻辑，确保属性值的合法性。</li>
+</ol>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.5%20%E6%9E%9A%E4%B8%BE%E7%B1%BB/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  3.2.5 枚举类
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.3%20%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B/">
+                3.2.3 包装类型
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
+
+	</div>
+	<div id="footer">
+	<p>
+	©<span id="footerYear-start"></span>-<span id="footerYear-end"></span>
+
+	
+	    <a href="/">Yuwl</a>
+	
+	
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//wujun.me" target="_blank">Wu Jun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+
+
+<script type="text/javascript">
+	document.getElementById('footerYear-start').innerHTML = new Date().getFullYear() + '';
+</script>
+
+<script type="text/javascript">
+	document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
+</script>
+
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
