@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		19.3 Stream API | 
+	 
+	Yuwl&#39;s Notes
+	</title>
+	
+	<!-- keywords,description -->
+	
+	
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "wujun234.com";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js"></script>
+
+	
+	
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/" class="logo">Yuwl's Notes</a>
+
+	<ul id="menu">
+    
+
+    
+      <li class="menu-item">
+        <a href="/tags" class="menu-item-link">Tags</a>
+      </li>
+    
+
+    
+      <li class="menu-item">
+        <a href="/categories" class="menu-item-link">Categories</a>
+      </li>
+    
+
+    
+  
+    
+      <li class="menu-item">
+        <a href='https://github.com/yuwl' class="menu-item-link" target="_blank">
+          <i class="fa fa-github fa-2x"></i>
+        </a>
+      </li>
+    
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="Press Enter to search">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Java
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/07/31/Java/01.%20java%E7%AE%80%E4%BB%8B/">
+                     
+										    01. java简介
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										02. 快速入门
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										2.1 搭建开发环境
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/07/31/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.1%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/2.1.1%20%E5%AE%89%E8%A3%85JDK/">
+                     
+										    2.1.1 安装JDK
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/07/31/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.1%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/2.1.2%20%E7%AC%AC%E4%B8%80%E4%B8%AAJava%E7%A8%8B%E5%BA%8F/">
+                     
+										    2.1.2 第一个Java程序
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/07/31/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.1%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/2.1.3%20%E4%BD%BF%E7%94%A8IDE/">
+                     
+										    2.1.3 使用IDE
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										2.2 Java程序基础
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.1%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/">
+                     
+										    2.2.1 Java程序基础
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.2%20%E5%8F%98%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+                     
+										    2.2.2 变量和数据类型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.3%20%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97/">
+                     
+										    2.2.3 整数运算
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.4%20%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97/">
+                     
+										    2.2.4 浮点数运算
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.5%20%E5%B8%83%E5%B0%94%E8%BF%90%E7%AE%97/">
+                     
+										    2.2.5 布尔运算
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.6%20%E5%AD%97%E7%AC%A6%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                     
+										    2.2.6 字符和字符串
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.2%20Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/2.2.7%20%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B/">
+                     
+										    2.2.7 数组类型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										2.3 流程控制
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.3%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/2.3.1%20%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA/">
+                     
+										    2.3.1 输入和输出
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.3%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/2.3.2%20if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/">
+                     
+										    2.3.2 if条件判断
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.3%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/2.3.3%20switch%E5%A4%9A%E9%87%8D%E9%80%89%E6%8B%A9/">
+                     
+										    2.3.3 switch多重选择
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/01/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.3%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/2.3.4%20while%E5%BE%AA%E7%8E%AF/">
+                     
+										    2.3.4 while循环
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/02/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.3%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/2.3.5%20do-while%E5%BE%AA%E7%8E%AF/">
+                     
+										    2.3.5 do-while循环
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/02/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.3%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/2.3.6%20for%E5%BE%AA%E7%8E%AF/">
+                     
+										    2.3.6 for循环
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/02/Java/02.%20%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/2.3%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/2.3.7%20break%E5%92%8Ccontinue/">
+                     
+										    2.3.7 break和continue
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										03. 面向对象编程
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										3.1 面向对象基础
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">
+                     
+										    3.1.1 面向对象编程编程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.2%20%E6%96%B9%E6%B3%95/">
+                     
+										    3.1.2 方法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.3%20%E7%BB%A7%E6%89%BF/">
+                     
+										    3.1.3 继承
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.4%20%E5%A4%9A%E6%80%81/">
+                     
+										    3.1.4 多态
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.5%20%E6%8A%BD%E8%B1%A1%E7%B1%BB/">
+                     
+										    3.1.5 抽象类
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.6%20%E6%8E%A5%E5%8F%A3/">
+                     
+										    3.1.6 接口
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.7%20%E9%9D%99%E6%80%81%E5%AD%97%E6%AE%B5%E5%92%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95/">
+                     
+										    3.1.7 静态字段和静态方法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.1%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/3.1.8%20%E5%86%85%E9%83%A8%E7%B1%BB/">
+                     
+										    3.1.8 内部类
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										3.2 Java核心类
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.1%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E7%BC%96%E7%A0%81/">
+                     
+										    3.2.1 字符串和编码
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.2%20StringBuilder/">
+                     
+										    3.2.2 StringBuilder 和 StringBuffer
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.3%20%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B/">
+                     
+										    3.2.3 包装类型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.4%20JavaBean/">
+                     
+										    3.2.4 JavaBean
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.5%20%E6%9E%9A%E4%B8%BE%E7%B1%BB/">
+                     
+										    3.2.5 枚举类
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.6%20BigInteger/">
+                     
+										    3.2.6 BigInteger
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.7%20BigDecimal/">
+                     
+										    3.2.7 BigDecimal
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/03.%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/3.2%20Java%E6%A0%B8%E5%BF%83%E7%B1%BB/3.2.8%20%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB/">
+                     
+										    3.2.8 常用工具类
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										04. 异常处理
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/04.%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/4.1%20Java%E7%9A%84%E5%BC%82%E5%B8%B8/">
+                     
+										    4.1 Java的异常
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/04.%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/4.2%20%E4%BD%BF%E7%94%A8%E6%96%AD%E8%A8%80/">
+                     
+										    4.2 使用断言
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/04.%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/4.3%20%E4%BD%BF%E7%94%A8JDK-Logging/">
+                     
+										    4.3 使用JDK Logging
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/04.%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/4.4%20%E4%BD%BF%E7%94%A8Commons-Logging/">
+                     
+										    4.4 使用Commons Logging
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/04.%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/4.5%20%E4%BD%BF%E7%94%A8Log4j/">
+                     
+										    4.5 使用Log4j
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/03/Java/04.%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/4.6%20%E4%BD%BF%E7%94%A8SLF4J/">
+                     
+										    4.6 使用SLF4J
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										05. 反射
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/04/Java/05.%20%E5%8F%8D%E5%B0%84/5.1%20%E5%8F%8D%E5%B0%84/">
+                     
+										    5.1 反射
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/04/Java/05.%20%E5%8F%8D%E5%B0%84/5.2%20%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/">
+                     
+										    5.2 动态代理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										06. 注解
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/04/Java/06.%20%E6%B3%A8%E8%A7%A3/6.1%20%E6%B3%A8%E8%A7%A3/">
+                     
+										    6.1 注解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										07. 泛型
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/04/Java/07.%20%E6%B3%9B%E5%9E%8B/7.1%20%E6%B3%9B%E5%9E%8B/">
+                     
+										    7.1 泛型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/04/Java/07.%20%E6%B3%9B%E5%9E%8B/7.2%20%E6%B3%9B%E5%9E%8B%E6%93%A6%E9%99%A4/">
+                     
+										    7.2 泛型擦除
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										08. 集合
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/05/Java/08.%20%E9%9B%86%E5%90%88/8.1%20%E9%9B%86%E5%90%88/">
+                     
+										    8.1 集合
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/05/Java/08.%20%E9%9B%86%E5%90%88/8.2%20List/">
+                     
+										    8.2 List
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/05/Java/08.%20%E9%9B%86%E5%90%88/8.3%20Set/">
+                     
+										    8.3 Set
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/05/Java/08.%20%E9%9B%86%E5%90%88/8.4%20Map/">
+                     
+										    8.4 Map
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/05/Java/08.%20%E9%9B%86%E5%90%88/8.5%20Queue/">
+                     
+										    8.5 Queue
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/05/Java/08.%20%E9%9B%86%E5%90%88/8.6%20%E9%9B%86%E5%90%88%E5%B7%A5%E5%85%B7%E7%B1%BB/">
+                     
+										    8.6 集合工具类
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/07/Java/08.%20%E9%9B%86%E5%90%88/8.7%20equals%E5%92%8ChashCode%E6%96%B9%E6%B3%95/">
+                     
+										    8.7 equals和hashCode方法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										09. IO
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/07/Java/09.%20IO/9.1%20IO/">
+                     
+										    9.1 IO
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/07/Java/09.%20IO/9.2%20InputStream%E5%92%8COutputStream/">
+                     
+										    9.2 InputStream和OutputStream
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/07/Java/09.%20IO/9.3%20Reader%E5%92%8CWriter/">
+                     
+										    9.3 Reader和Writer
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/07/Java/09.%20IO/9.4%20%E5%BA%8F%E5%88%97%E5%8C%96/">
+                     
+										    9.4 序列化
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/07/Java/09.%20IO/9.5%20PrintStream%E5%92%8CPrintWriter/">
+                     
+										    9.5 PrintStream和PrintWriter
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/07/Java/09.%20IO/9.6%20File%E5%92%8CFiles/">
+                     
+										    9.6 File和Files
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/07/Java/09.%20IO/9.7%20Zip%E6%96%87%E4%BB%B6/">
+                     
+										    9.7 Zip文件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/07/Java/09.%20IO/9.8%20classpath%E8%B5%84%E6%BA%90/">
+                     
+										    9.8 classpath资源
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										10. 日期和时间
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/08/Java/10.%20%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/10.1%20%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/">
+                     
+										    10.1 日期和时间
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/08/Java/10.%20%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/10.2%20Date%E5%92%8CCalendar/">
+                     
+										    10.2 Date和Calendar
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/08/Java/10.%20%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/10.3%20LocalDateTime/">
+                     
+										    10.3 LocalDateTime
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/08/Java/10.%20%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/10.4%20DateTimeFormatter/">
+                     
+										    10.4 DateTimeFormatter
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/08/Java/10.%20%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/10.5%20Instant/">
+                     
+										    10.5 Instant
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/08/Java/10.%20%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/10.6%20ZonedDateTime/">
+                     
+										    10.6 ZonedDateTime
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/08/Java/10.%20%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/10.7%20%E6%96%B0%E6%97%A7API%E8%BD%AC%E6%8D%A2/">
+                     
+										    10.7 新旧API转换
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										11. 单元测试
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/10/Java/11.%20%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/11.1%20JUnit%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">
+                     
+										    11.1 JUnit单元测试
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										12. 正则表达式
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/10/Java/12.%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/12.1%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+                     
+										    12.1 正则表达式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										13. 加密与安全
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/10/Java/13.%20%E5%8A%A0%E5%AF%86%E4%B8%8E%E5%AE%89%E5%85%A8/13.1%20%E7%BC%96%E7%A0%81%E7%AE%97%E6%B3%95/">
+                     
+										    13.1 编码算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/10/Java/13.%20%E5%8A%A0%E5%AF%86%E4%B8%8E%E5%AE%89%E5%85%A8/13.2%20%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95/">
+                     
+										    13.2 哈希算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/10/Java/13.%20%E5%8A%A0%E5%AF%86%E4%B8%8E%E5%AE%89%E5%85%A8/13.3%20%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/">
+                     
+										    13.3 对称加密算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/10/Java/13.%20%E5%8A%A0%E5%AF%86%E4%B8%8E%E5%AE%89%E5%85%A8/13.4%20%E5%8F%A3%E4%BB%A4%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/">
+                     
+										    13.4 口令加密算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/10/Java/13.%20%E5%8A%A0%E5%AF%86%E4%B8%8E%E5%AE%89%E5%85%A8/13.5%20%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/">
+                     
+										    13.5 非对称加密算法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/10/Java/13.%20%E5%8A%A0%E5%AF%86%E4%B8%8E%E5%AE%89%E5%85%A8/13.6%20%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/">
+                     
+										    13.6 数字证书
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										14. 多线程
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/11/Java/14.%20%E5%A4%9A%E7%BA%BF%E7%A8%8B/14.1%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/">
+                     
+										    14.1 多线程基础
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/11/Java/14.%20%E5%A4%9A%E7%BA%BF%E7%A8%8B/14.2%20%E5%B9%B6%E5%8F%91%E5%90%8C%E6%AD%A5%E5%B7%A5%E5%85%B7%E7%B1%BB/">
+                     
+										    14.2 并发同步工具类
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/11/Java/14.%20%E5%A4%9A%E7%BA%BF%E7%A8%8B/14.3%20%E7%BA%BF%E7%A8%8B%E6%B1%A0/">
+                     
+										    14.3 线程池
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/11/Java/14.%20%E5%A4%9A%E7%BA%BF%E7%A8%8B/14.4%20%E5%B9%B6%E5%8F%91%E9%9B%86%E5%90%88%E7%B1%BB/">
+                     
+										    14.4 并发集合类
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/11/Java/14.%20%E5%A4%9A%E7%BA%BF%E7%A8%8B/14.5%20%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C%E7%B1%BB/">
+                     
+										    14.5 原子操作类
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/11/Java/14.%20%E5%A4%9A%E7%BA%BF%E7%A8%8B/14.6%20CompletableFuture/">
+                     
+										    14.6 CompletableFuture
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/11/Java/14.%20%E5%A4%9A%E7%BA%BF%E7%A8%8B/14.7%20Fork-Join/">
+                     
+										    14.7 Fork-Join
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/11/Java/14.%20%E5%A4%9A%E7%BA%BF%E7%A8%8B/14.8%20ThreadLocal/">
+                     
+										    14.8 ThreadLocal
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										15. 网络编程
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/11/Java/15.%20%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/15.1%20%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">
+                     
+										    15.1 网络编程基础
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/11/Java/15.%20%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/15.2%20Http%E7%BC%96%E7%A8%8B/">
+                     
+										    15.2 Http编程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/11/Java/15.%20%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/15.3%20Email%E7%BC%96%E7%A8%8B/">
+                     
+										    15.3 Email编程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/11/Java/15.%20%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/15.4%20RMI%E8%BF%9C%E7%A8%8B%E8%B0%83%E7%94%A8/">
+                     
+										    15.4 RMI远程调用
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										16. Maven
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/12/Java/16.%20Maven/16.1%20Maven%E5%9F%BA%E7%A1%80/">
+                     
+										    16.1 Maven基础
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/12/Java/16.%20Maven/16.2%20Maven%E6%A0%B8%E5%BF%83/">
+                     
+										    16.2 Maven核心
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/12/Java/16.%20Maven/16.3%20Maven%E6%9E%84%E5%BB%BA/">
+                     
+										    16.3 Maven构建
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/13/Java/16.%20Maven/16.4%20%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86/">
+                     
+										    16.4 模块管理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										17. XML与JSON
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/18/Java/17.%20XML%E4%B8%8EJSON/17.1%20XML/">
+                     
+										    17.1 XML
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/18/Java/17.%20XML%E4%B8%8EJSON/17.2%20JSON/">
+                     
+										    17.2 JSON
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										18. JDBC编程
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/18/Java/18.%20JDBC%E7%BC%96%E7%A8%8B/18.1%20JDBC%E7%BC%96%E7%A8%8B/">
+                     
+										    18.1 JDBC编程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										19. 函数式编程
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/08/18/Java/19.%20%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/19.1%20Lambda-%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+                     
+										    19.1 Lambda 表达式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/18/Java/19.%20%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/19.2%20%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/">
+                     
+										    19.2 函数式接口
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/2024/08/18/Java/19.%20%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/19.3%20Stream-API/">
+                     
+										    19.3 Stream API
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/08/18/Java/19.%20%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/19.4%20%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/">
+                     
+										    19.4 方法引用
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/07/29/hello-world/">
+                     
+										    Hello World
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content" class="content">
+		<h1 id="article-title">
+	19.3 Stream API
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+	
+
+	<span>Yuwl</span>
+	<span>2024-08-18 17:05:44</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+          
+              <span>
+                  <i class="fa fa-folder" aria-hidden="true">
+                  <a href="/categories/Java/">Java</a>
+                  </i>
+                
+              </span>
+          
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+            
+                <span>
+                    <i class="fa fa-tag" aria-hidden="true">
+                    <a href="/tags/lambda/">lambda</a>
+                    </i>
+                </span>
+            
+        
+    
+  </div>
+
+</div>
+
+<!-- content -->
+<div id="article-content">
+	<p>现在我们来学习 Stream API。</p>
+<p>Stream API 是 Java 8 引入的功能，用于以函数式风格处理集合数据。它提供了一个强大而灵活的方式来进行数据处理，支持各种操作，如过滤、映射、排序和收集等。以下是对 Stream API 更详细的学习内容。</p>
+<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><h4 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1. 基本概念"></a>1. 基本概念</h4><p>Stream 是一个数据的序列，支持各种计算操作，比如筛选、映射、归约等。它有以下特点：</p>
+<p>不存储数据：Stream 只是对数据的操作，不会保存数据。<br>惰性求值：Stream 的操作是惰性执行的，只有在需要结果时才会真正计算。<br>链式操作：可以将多个操作链式连接起来，形成流水线。</p>
+<h4 id="2-创建-Stream"><a href="#2-创建-Stream" class="headerlink" title="2. 创建 Stream"></a>2. 创建 Stream</h4><ul>
+<li>从集合创建 Stream：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = Arrays.asList(<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>);</span><br><span class="line">Stream&lt;String&gt; stream = list.stream();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>从数组创建 Stream：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String[] array = &#123;<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>&#125;;</span><br><span class="line">Stream&lt;String&gt; stream = Arrays.stream(array);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>从文件创建 Stream：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (Stream&lt;String&gt; lines = Files.lines(Paths.get(<span class="string">&quot;file.txt&quot;</span>))) &#123;</span><br><span class="line">    lines.forEach(System.out::println);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>生成无限 Stream（例如，自然数序列）：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stream&lt;Integer&gt; infiniteStream = Stream.iterate(<span class="number">1</span>, n -&gt; n + <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="3-常见操作"><a href="#3-常见操作" class="headerlink" title="3. 常见操作"></a>3. 常见操作</h4><ul>
+<li><p>中间操作（惰性操作）： 返回一个新的 Stream，原 Stream 不变。</p>
+</li>
+<li><p>filter：根据条件过滤数据。</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stream&lt;String&gt; filtered = stream.filter(s -&gt; s.startsWith(<span class="string">&quot;a&quot;</span>));</span><br></pre></td></tr></table></figure>
+<ul>
+<li>map：对每个元素应用函数。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stream&lt;Integer&gt; lengths = stream.map(String::length);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>flatMap：将每个元素转换为多个元素并扁平化。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Stream&lt;String&gt; words = Stream.of(<span class="string">&quot;hello world&quot;</span>, <span class="string">&quot;java streams&quot;</span>);</span><br><span class="line">Stream&lt;String&gt; flatMap = words.flatMap(s -&gt; Arrays.stream(s.split(<span class="string">&quot; &quot;</span>)));</span><br><span class="line">distinct：去重。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stream&lt;String&gt; distinctStream = stream.distinct();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>sorted：排序。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stream&lt;String&gt; sortedStream = stream.sorted();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>peek：用于调试，可以查看每个元素。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stream&lt;String&gt; peekedStream = stream.peek(System.out::println);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>终结操作（执行计算）： 产生结果或副作用，并结束 Stream 操作链。</p>
+</li>
+<li><p>collect：将结果收集到集合中。</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; resultList = stream.collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
+<ul>
+<li>count：计算元素数量。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">long</span> <span class="variable">count</span> <span class="operator">=</span> stream.count();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>reduce：将所有元素合并为一个值。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> stream.reduce(<span class="number">0</span>, Integer::sum);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>forEach：对每个元素执行操作。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stream.forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>findFirst：获取第一个元素（如果存在）。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Optional&lt;String&gt; first = stream.findFirst();</span><br></pre></td></tr></table></figure>
+<p>anyMatch、allMatch、noneMatch：检查是否存在满足条件的元素。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="variable">hasAny</span> <span class="operator">=</span> stream.anyMatch(s -&gt; s.startsWith(<span class="string">&quot;a&quot;</span>));</span><br></pre></td></tr></table></figure>
+<h4 id="4-示例"><a href="#4-示例" class="headerlink" title="4. 示例"></a>4. 示例</h4><ul>
+<li>过滤和映射：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; names = Arrays.asList(<span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;Bob&quot;</span>, <span class="string">&quot;Charlie&quot;</span>, <span class="string">&quot;David&quot;</span>);</span><br><span class="line">List&lt;String&gt; filtered = names.stream()</span><br><span class="line">    .filter(name -&gt; name.startsWith(<span class="string">&quot;A&quot;</span>))</span><br><span class="line">    .map(String::toUpperCase)</span><br><span class="line">    .collect(Collectors.toList());</span><br><span class="line">System.out.println(filtered); <span class="comment">// 输出 [ALICE]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>链式操作：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; words = Arrays.asList(<span class="string">&quot;apple&quot;</span>, <span class="string">&quot;banana&quot;</span>, <span class="string">&quot;cherry&quot;</span>, <span class="string">&quot;date&quot;</span>);</span><br><span class="line"><span class="type">long</span> <span class="variable">count</span> <span class="operator">=</span> words.stream()</span><br><span class="line">    .filter(word -&gt; word.length() &gt; <span class="number">5</span>)</span><br><span class="line">    .map(String::toUpperCase)</span><br><span class="line">    .distinct()</span><br><span class="line">    .count();</span><br><span class="line">System.out.println(count); <span class="comment">// 输出 2 (BANANA, CHERRY)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>收集到 Map：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Integer, List&lt;String&gt;&gt; groupedByLength = words.stream()</span><br><span class="line">    .collect(Collectors.groupingBy(String::length));</span><br><span class="line">System.out.println(groupedByLength);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>并行流：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);</span><br><span class="line"><span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> numbers.parallelStream()</span><br><span class="line">    .mapToInt(Integer::intValue)</span><br><span class="line">    .sum();</span><br><span class="line">System.out.println(sum); <span class="comment">// 输出 15</span></span><br></pre></td></tr></table></figure>
+<h4 id="5-性能考虑"><a href="#5-性能考虑" class="headerlink" title="5. 性能考虑"></a>5. 性能考虑</h4><ul>
+<li>Stream 的并行操作可以利用多核处理器来提高性能，但需要注意并行流的开销，特别是在数据量小或操作简单时。</li>
+<li>惰性求值：Stream 的操作是惰性求值的，即只有在需要结果时才会进行计算。</li>
+</ul>
+<h3 id="map用法"><a href="#map用法" class="headerlink" title="map用法"></a>map用法</h3><h4 id="1-基本用法"><a href="#1-基本用法" class="headerlink" title="1. 基本用法"></a>1. 基本用法</h4><p>map 方法接收一个 Function 接口，并将流中的每个元素通过这个函数转换成另一个元素，然后返回一个新的流。</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; words = Arrays.asList(<span class="string">&quot;apple&quot;</span>, <span class="string">&quot;banana&quot;</span>, <span class="string">&quot;cherry&quot;</span>);</span><br><span class="line">List&lt;Integer&gt; wordLengths = words.stream()</span><br><span class="line">    .map(String::length)</span><br><span class="line">    .collect(Collectors.toList());</span><br><span class="line">System.out.println(wordLengths); <span class="comment">// 输出 [5, 6, 6]</span></span><br></pre></td></tr></table></figure>
+<p>在这个例子中，map 方法将每个字符串转换为其长度。</p>
+<h4 id="2-使用-Function-接口"><a href="#2-使用-Function-接口" class="headerlink" title="2. 使用 Function 接口"></a>2. 使用 Function 接口</h4><p>map 方法接收的 Function 接口可以是任意一个可以将输入映射到输出的函数。</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; names = Arrays.asList(<span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;Bob&quot;</span>, <span class="string">&quot;Charlie&quot;</span>);</span><br><span class="line">List&lt;String&gt; upperCaseNames = names.stream()</span><br><span class="line">    .map(name -&gt; name.toUpperCase())</span><br><span class="line">    .collect(Collectors.toList());</span><br><span class="line">System.out.println(upperCaseNames); <span class="comment">// 输出 [ALICE, BOB, CHARLIE]</span></span><br></pre></td></tr></table></figure>
+<p>这里，map 方法使用了一个 Lambda 表达式将每个名字转换为大写。</p>
+<h4 id="3-与其他方法的组合使用"><a href="#3-与其他方法的组合使用" class="headerlink" title="3. 与其他方法的组合使用"></a>3. 与其他方法的组合使用</h4><p>map 方法常常与其他 Stream 操作方法（如 filter、reduce）一起使用，以形成复杂的数据处理管道。</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">复制代码</span><br><span class="line">List&lt;String&gt; words = Arrays.asList(<span class="string">&quot;apple&quot;</span>, <span class="string">&quot;banana&quot;</span>, <span class="string">&quot;cherry&quot;</span>, <span class="string">&quot;date&quot;</span>);</span><br><span class="line">List&lt;String&gt; processedWords = words.stream()</span><br><span class="line">    .filter(word -&gt; word.length() &gt; <span class="number">5</span>)    <span class="comment">// 过滤长度大于 5 的单词</span></span><br><span class="line">    .map(String::toUpperCase)             <span class="comment">// 转换为大写</span></span><br><span class="line">    .sorted()                             <span class="comment">// 排序</span></span><br><span class="line">    .collect(Collectors.toList());</span><br><span class="line">System.out.println(processedWords); <span class="comment">// 输出 [BANANA, CHERRY]</span></span><br></pre></td></tr></table></figure>
+<p>在这个例子中，map 方法将过滤后的单词转换为大写。</p>
+<h4 id="4-map-与-flatMap-的区别"><a href="#4-map-与-flatMap-的区别" class="headerlink" title="4. map 与 flatMap 的区别"></a>4. map 与 flatMap 的区别</h4><p>map 和 flatMap 都用于元素转换，但 flatMap 是用于将每个元素映射成零个或多个元素并扁平化流。flatMap 的结果是一个单一的流，而不是嵌套的流。</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">List&lt;List&lt;String&gt;&gt; listOfLists = Arrays.asList(</span><br><span class="line">    Arrays.asList(<span class="string">&quot;apple&quot;</span>, <span class="string">&quot;banana&quot;</span>),</span><br><span class="line">    Arrays.asList(<span class="string">&quot;cherry&quot;</span>, <span class="string">&quot;date&quot;</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; flatList = listOfLists.stream()</span><br><span class="line">    .flatMap(Collection::stream)</span><br><span class="line">    .collect(Collectors.toList());</span><br><span class="line">System.out.println(flatList); <span class="comment">// 输出 [apple, banana, cherry, date]</span></span><br></pre></td></tr></table></figure>
+<p>在这个例子中，flatMap 将每个内层的列表展开成一个单一的流。</p>
+<h4 id="5-使用-map-处理复杂对象"><a href="#5-使用-map-处理复杂对象" class="headerlink" title="5. 使用 map 处理复杂对象"></a>5. 使用 map 处理复杂对象</h4><p>map 方法不仅可以用来处理基本类型，也可以用来处理复杂对象。你可以通过 map 提取对象的某些属性或进行其他转换。</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 构造函数、getter 和 setter 略</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(String name, <span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">List&lt;Person&gt; people = Arrays.asList(</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Alice&quot;</span>, <span class="number">30</span>),</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Bob&quot;</span>, <span class="number">25</span>),</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Charlie&quot;</span>, <span class="number">35</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; names = people.stream()</span><br><span class="line">    .map(Person::getName)</span><br><span class="line">    .collect(Collectors.toList());</span><br><span class="line">System.out.println(names); <span class="comment">// 输出 [Alice, Bob, Charlie]</span></span><br></pre></td></tr></table></figure>
+<h4 id="6-使用-map-和-Optional"><a href="#6-使用-map-和-Optional" class="headerlink" title="6. 使用 map 和 Optional"></a>6. 使用 map 和 Optional</h4><p>map 方法还可以与 Optional 类型一起使用。Optional 的 map 方法用于将 Optional 中的值转换为另一种形式。</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Optional&lt;String&gt; optionalString = Optional.of(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">Optional&lt;String&gt; upperCaseString = optionalString.map(String::toUpperCase);</span><br><span class="line">System.out.println(upperCaseString.get()); <span class="comment">// 输出 &quot;HELLO&quot;</span></span><br></pre></td></tr></table></figure>
+<h4 id="7-使用-map-进行数据转换和格式化"><a href="#7-使用-map-进行数据转换和格式化" class="headerlink" title="7. 使用 map 进行数据转换和格式化"></a>7. 使用 map 进行数据转换和格式化</h4><p>你可以使用 map 来执行复杂的数据转换和格式化操作。</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Double&gt; prices = Arrays.asList(<span class="number">10.0</span>, <span class="number">20.0</span>, <span class="number">30.0</span>);</span><br><span class="line">List&lt;String&gt; formattedPrices = prices.stream()</span><br><span class="line">    .map(price -&gt; String.format(<span class="string">&quot;$%.2f&quot;</span>, price))</span><br><span class="line">    .collect(Collectors.toList());</span><br><span class="line">System.out.println(formattedPrices); <span class="comment">// 输出 [$10.00, $20.00, $30.00]</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="toMap用法"><a href="#toMap用法" class="headerlink" title="toMap用法"></a>toMap用法</h3><h4 id="1-基本用法-1"><a href="#1-基本用法-1" class="headerlink" title="1. 基本用法"></a>1. 基本用法</h4><p>将流元素转换为 Map：</p>
+<p>你可以使用 Collectors.toMap 方法将流中的元素收集到一个 Map 中。在基本用法中，你需要提供两个函数，一个用于生成 Map 的键，另一个用于生成 Map 的值。</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; names = Arrays.asList(<span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;Bob&quot;</span>, <span class="string">&quot;Charlie&quot;</span>);</span><br><span class="line"></span><br><span class="line">Map&lt;String, Integer&gt; nameToLength = names.stream()</span><br><span class="line">    .collect(Collectors.toMap(</span><br><span class="line">        Function.identity(),  <span class="comment">// 键：元素本身</span></span><br><span class="line">        String::length         <span class="comment">// 值：元素的长度</span></span><br><span class="line">    ));</span><br><span class="line">System.out.println(nameToLength); <span class="comment">// 输出 &#123;Alice=5, Bob=3, Charlie=7&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-处理键重复的情况"><a href="#2-处理键重复的情况" class="headerlink" title="2. 处理键重复的情况"></a>2. 处理键重复的情况</h4><p>如果流中的元素可能会导致重复的键，你需要提供一个合并函数来处理这些重复的键。这个合并函数会在遇到重复键时被调用。</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; names = Arrays.asList(<span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;Bob&quot;</span>, <span class="string">&quot;Charlie&quot;</span>, <span class="string">&quot;Bob&quot;</span>);</span><br><span class="line"></span><br><span class="line">Map&lt;String, Integer&gt; nameToLength = names.stream()</span><br><span class="line">    .collect(Collectors.toMap(</span><br><span class="line">        Function.identity(),        <span class="comment">// 键：元素本身</span></span><br><span class="line">        String::length,             <span class="comment">// 值：元素的长度</span></span><br><span class="line">        (existing, replacement) -&gt; existing  <span class="comment">// 合并函数：保留第一个值</span></span><br><span class="line">    ));</span><br><span class="line">System.out.println(nameToLength); <span class="comment">// 输出 &#123;Alice=5, Bob=3, Charlie=7&#125;</span></span><br></pre></td></tr></table></figure>
+<p>在这个示例中，如果遇到重复的键（例如 “Bob”），我们选择保留第一个出现的值。</p>
+<h4 id="3-将对象属性映射到-Map-中"><a href="#3-将对象属性映射到-Map-中" class="headerlink" title="3. 将对象属性映射到 Map 中"></a>3. 将对象属性映射到 Map 中</h4><p>如果你有一个对象列表，并且想要将对象的某个属性作为键，另一个属性作为值，可以使用 toMap 方法。</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 构造函数、getter 和 setter 略</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(String name, <span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">List&lt;Person&gt; people = Arrays.asList(</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Alice&quot;</span>, <span class="number">30</span>),</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Bob&quot;</span>, <span class="number">25</span>),</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Charlie&quot;</span>, <span class="number">35</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">Map&lt;String, Integer&gt; nameToAge = people.stream()</span><br><span class="line">    .collect(Collectors.toMap(</span><br><span class="line">        Person::getName,   <span class="comment">// 键：人的名字</span></span><br><span class="line">        Person::getAge     <span class="comment">// 值：人的年龄</span></span><br><span class="line">    ));</span><br><span class="line">System.out.println(nameToAge); <span class="comment">// 输出 &#123;Alice=30, Bob=25, Charlie=35&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-多值收集到-Map"><a href="#4-多值收集到-Map" class="headerlink" title="4. 多值收集到 Map"></a>4. 多值收集到 Map</h4><p>有时候你可能需要将多个值收集到一个 Map 中。可以使用 Collectors.groupingBy 来实现这种需求，它会将元素分组并收集到 Map 中。</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; words = Arrays.asList(<span class="string">&quot;apple&quot;</span>, <span class="string">&quot;banana&quot;</span>, <span class="string">&quot;apple&quot;</span>, <span class="string">&quot;cherry&quot;</span>, <span class="string">&quot;banana&quot;</span>);</span><br><span class="line"></span><br><span class="line">Map&lt;String, Long&gt; wordFrequency = words.stream()</span><br><span class="line">    .collect(Collectors.groupingBy(</span><br><span class="line">        Function.identity(),  <span class="comment">// 键：单词</span></span><br><span class="line">        Collectors.counting()  <span class="comment">// 值：单词出现的次数</span></span><br><span class="line">    ));</span><br><span class="line">System.out.println(wordFrequency); <span class="comment">// 输出 &#123;apple=2, banana=2, cherry=1&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="5-将流元素收集到-Map-的值为集合"><a href="#5-将流元素收集到-Map-的值为集合" class="headerlink" title="5. 将流元素收集到 Map 的值为集合"></a>5. 将流元素收集到 Map 的值为集合</h4><p>有时候你可能希望将流中的元素分组，并将分组的结果收集到 Map 的集合中。</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; words = Arrays.asList(<span class="string">&quot;apple&quot;</span>, <span class="string">&quot;banana&quot;</span>, <span class="string">&quot;apricot&quot;</span>, <span class="string">&quot;cherry&quot;</span>);</span><br><span class="line"></span><br><span class="line">Map&lt;Character, List&lt;String&gt;&gt; groupedByFirstLetter = words.stream()</span><br><span class="line">    .collect(Collectors.groupingBy(</span><br><span class="line">        word -&gt; word.charAt(<span class="number">0</span>),  <span class="comment">// 键：单词的第一个字母</span></span><br><span class="line">        Collectors.toList()      <span class="comment">// 值：具有相同字母的单词列表</span></span><br><span class="line">    ));</span><br><span class="line">System.out.println(groupedByFirstLetter); <span class="comment">// 输出 &#123;a=[apple, apricot], b=[banana], c=[cherry]&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="6-使用-toMap-进行复杂的计算"><a href="#6-使用-toMap-进行复杂的计算" class="headerlink" title="6. 使用 toMap 进行复杂的计算"></a>6. 使用 toMap 进行复杂的计算</h4><p>你可以在 toMap 中进行复杂的计算，例如合并多个属性或计算值。</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Person&gt; people = Arrays.asList(</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Alice&quot;</span>, <span class="number">30</span>),</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Bob&quot;</span>, <span class="number">25</span>),</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Alice&quot;</span>, <span class="number">32</span>) <span class="comment">// 重复名字</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">Map&lt;String, Integer&gt; nameToAge = people.stream()</span><br><span class="line">    .collect(Collectors.toMap(</span><br><span class="line">        Person::getName,  <span class="comment">// 键：名字</span></span><br><span class="line">        Person::getAge,   <span class="comment">// 值：年龄</span></span><br><span class="line">        (age1, age2) -&gt; Math.max(age1, age2) <span class="comment">// 合并函数：取较大的年龄</span></span><br><span class="line">    ));</span><br><span class="line">System.out.println(nameToAge); <span class="comment">// 输出 &#123;Alice=32, Bob=25&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
+<li>Collectors.toMap 用于将流中的元素收集到 Map 中，你可以指定键和值的生成方式。</li>
+<li>处理重复键时需要提供一个合并函数。</li>
+<li>可以使用 groupingBy 来将元素分组并收集到 Map 中。</li>
+<li>toMap 和其他收集器结合使用，可以实现复杂的数据处理和计算。</li>
+</ul>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2024/08/18/Java/19.%20%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/19.4%20%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  19.4 方法引用
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2024/08/18/Java/19.%20%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/19.2%20%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/">
+                19.2 函数式接口
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
+
+	</div>
+	<div id="footer">
+	<p>
+	©<span id="footerYear-start"></span>-<span id="footerYear-end"></span>
+
+	
+	    <a href="/">Yuwl</a>
+	
+	
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//wujun.me" target="_blank">Wu Jun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+
+
+<script type="text/javascript">
+	document.getElementById('footerYear-start').innerHTML = new Date().getFullYear() + '';
+</script>
+
+<script type="text/javascript">
+	document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
+</script>
+
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
