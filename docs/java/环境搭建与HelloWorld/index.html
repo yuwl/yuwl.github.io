@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-java/环境搭建与HelloWorld" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.5.2">
+<title data-rh="true">1. 环境搭建与 Hello World | TigerYu</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://yuwl.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://yuwl.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://yuwl.github.io/docs/java/环境搭建与HelloWorld"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="1. 环境搭建与 Hello World | TigerYu"><meta data-rh="true" name="description" content="学习目标："><meta data-rh="true" property="og:description" content="学习目标："><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://yuwl.github.io/docs/java/环境搭建与HelloWorld"><link data-rh="true" rel="alternate" href="https://yuwl.github.io/docs/java/环境搭建与HelloWorld" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://yuwl.github.io/docs/java/环境搭建与HelloWorld" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TigerYu RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TigerYu Atom Feed"><link rel="stylesheet" href="/assets/css/styles.1beb4a59.css">
+<script src="/assets/js/runtime~main.106f5d89.js" defer="defer"></script>
+<script src="/assets/js/main.0aa466e6.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">TigerYu</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/category/java">文档</a><a class="navbar__item navbar__link" href="/blog">博客</a><a class="navbar__item navbar__link" href="/tool">工具</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/yuwl" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="切换浅色/暗黑模式（当前为浅色模式）" aria-label="切换浅色/暗黑模式（当前为浅色模式）" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/category/java">Java</a><button aria-label="折叠侧边栏分类 &#x27;Java&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/java/环境搭建与HelloWorld">1. 环境搭建与 Hello World</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/java/基础语法">2. 基础语法</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/java/方法Method">3. 方法 (Method)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/java/类与对象">4. 类与对象</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/java/面向对象三大特征">5. 面向对象三大特征</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/java/面向对象高级特性">6. 面向对象高级特性</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/java/常用核心类">7. 常用核心类</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/java/集合框架">8. Java 集合框架</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/java/异常处理">9. 异常处理</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/java/IO流与文件操作">10. IO 流与文件操作</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/java/多线程">11. 多线程编程</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/java/Java8新特性">12. Java8 新特性详解</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/java/Mysql数据库">13. MySQL 数据库</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/java/JDBC">14. JDBC</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/java/构建工具 Maven">15. 构建工具 Maven</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/java/版本控制 Git">16. 版本控制 Git</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/java/Web 基础">17. Web 开发基础</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/java/Spring 全家桶">18. Spring 全家桶</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/java/持久层框架">19. 持久层框架</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/java/SpringBoot">20. SpringBoot</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/tutorial">Tutorial</a><button aria-label="展开侧边栏分类 &#x27;Tutorial&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/category/java"><span itemprop="name">Java</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">1. 环境搭建与 Hello World</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>1. 环境搭建与 Hello World</h1></header>
+<p>学习目标：</p>
+<ol>
+<li>成功安装 JDK（Java 开发工具包）。</li>
+<li>配置好环境变量，让电脑认识 Java 命令。</li>
+<li>安装 IntelliJ IDEA（最好用的 Java 编写软件）。</li>
+<li>编写并运行你的第一行代码。</li>
+</ol>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="1-什么是-jdk-了解即可">1. 什么是 JDK？ (了解即可)<a href="#1-什么是-jdk-了解即可" class="hash-link" aria-label="1. 什么是 JDK？ (了解即可)的直接链接" title="1. 什么是 JDK？ (了解即可)的直接链接">​</a></h2>
+<ul>
+<li>JDK (Java Development Kit): Java 开发工具包。你是开发者，所以需要它。它包含了编写、编译和运行 Java 程序所需的一切。</li>
+<li>JRE (Java Runtime Environment): Java 运行环 境。如果你只是玩《我的世界》(Minecraft) Java 版，只装它就够了，但我们要写代码，必须装 JDK。</li>
+</ul>
+<blockquote>
+<p>结论：只需要安装 JDK，它里面已经包含了 JRE。</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="2-下载与安装-jdk">2. 下载与安装 JDK<a href="#2-下载与安装-jdk" class="hash-link" aria-label="2. 下载与安装 JDK的直接链接" title="2. 下载与安装 JDK的直接链接">​</a></h2>
+<p>目前企业主流使用的版本是 JDK 8, JDK 17, JDK 21。
+推荐版本：JDK 17 LTS (长期支持版)，既稳定又包含新特性，适合学习。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-下载步骤">📥 下载步骤<a href="#-下载步骤" class="hash-link" aria-label="📥 下载步骤的直接链接" title="📥 下载步骤的直接链接">​</a></h3>
+<ol>
+<li>访问 Oracle 官网下载页面（或者搜索 &quot;Oracle JDK 17 download&quot;）。</li>
+<li>根据你的电脑系统选择：<!-- -->
+<ul>
+<li>Windows: 选择 <code>x64 Installer</code> (如果是比较新的电脑)。</li>
+<li>Mac: 选择 <code>x64 DMG Installer</code> (Intel 芯片) 或 <code>Arm 64 DMG Installer</code> (M1/M2/M3 芯片)。</li>
+</ul>
+</li>
+<li>下载后双击运行，一路点击 &quot;Next&quot; (下一步) 即可。</li>
+<li>注意：记住你安装的路径（默认通常是 <code>C:\Program Files\Java\jdk-17...</code>），后面配置要用。</li>
+</ol>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="3-配置环境变量-windows-必做">3. 配置环境变量 (Windows 必做)<a href="#3-配置环境变量-windows-必做" class="hash-link" aria-label="3. 配置环境变量 (Windows 必做)的直接链接" title="3. 配置环境变量 (Windows 必做)的直接链接">​</a></h2>
+<p>这是最容易出错的一步，请仔细核对。Mac 用户通常安装后无需配置，或使用 <code>Homebrew</code> 安装。以下以 Windows 10/11 为例：</p>
+<ol>
+<li>打开设置：右键“此电脑” -&gt; “属性” -&gt; “高级系统设置” -&gt; “环境变量”。</li>
+<li>新建系统变量 (JAVA_HOME)：<!-- -->
+<ul>
+<li>在“系统变量”区域（下半部分），点击“新建”。</li>
+<li>变量名: <code>JAVA_HOME</code></li>
+<li>变量值: 粘贴刚才 JDK 的安装路径 (例如: <code>C:\Program Files\Java\jdk-17</code>)</li>
+<li>点击确定。</li>
+</ul>
+</li>
+<li>修改 Path 变量：<!-- -->
+<ul>
+<li>在“系统变量”里找到 <code>Path</code>，选中它，点击“编辑”。</li>
+<li>点击“新建”，输入：<code>%JAVA_HOME%\bin</code></li>
+<li>这一步的意思是：告诉系统，去 JDK 的 bin 目录下找 <code>java.exe</code> 等命令。</li>
+<li>一路点击“确定”保存所有窗口。</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-验证是否成功">✅ 验证是否成功<a href="#-验证是否成功" class="hash-link" aria-label="✅ 验证是否成功的直接链接" title="✅ 验证是否成功的直接链接">​</a></h3>
+<ol>
+<li>按 <code>Win + R</code> 键，输入 <code>cmd</code>，回车打开黑窗口（命令行）。</li>
+<li>输入命令：<code>java -version</code></li>
+<li>如果出现类似 <code>java version &quot;17.0.x&quot; ...</code> 的字样，恭喜你，环境配置成功！</li>
+<li>如果提示“不是内部或外部命令”，请回头检查路径是否填错。</li>
+</ol>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="4-安装-ideintellij-idea">4. 安装 IDE：IntelliJ IDEA<a href="#4-安装-ideintellij-idea" class="hash-link" aria-label="4. 安装 IDE：IntelliJ IDEA的直接链接" title="4. 安装 IDE：IntelliJ IDEA的直接链接">​</a></h2>
+<p>虽然记事本也能写代码，但我们直接使用现代化的工具。
+不要使用 Eclipse，它是上个时代的产物。</p>
+<ol>
+<li>下载：搜索 &quot;IntelliJ IDEA Download&quot;。</li>
+<li>选择版本：下载 Community (社区版)。它是免费的，且功能足够你学完所有基础和 Web 开发。<!-- -->
+<ul>
+<li><em>注意：Ultimate (旗舰版) 是收费的，初学不需要。</em></li>
+</ul>
+</li>
+<li>安装：下载 <code>.exe</code> (Win) 或 <code>.dmg</code> (Mac)，一路 Next 安装即可。</li>
+</ol>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="5-编写第一个程序hello-world">5. 编写第一个程序：Hello World<a href="#5-编写第一个程序hello-world" class="hash-link" aria-label="5. 编写第一个程序：Hello World的直接链接" title="5. 编写第一个程序：Hello World的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="第一步创建项目">第一步：创建项目<a href="#第一步创建项目" class="hash-link" aria-label="第一步：创建项目的直接链接" title="第一步：创建项目的直接链接">​</a></h3>
+<ol>
+<li>打开 IntelliJ IDEA。</li>
+<li>点击 New Project (新建项目)。</li>
+<li>Name: <code>JavaBasics</code> (或者你喜欢的名字)。</li>
+<li>Language: 选择 <code>Java</code>。</li>
+<li>Build system: 选择 <code>IntelliJ</code>。</li>
+<li>JDK: 这里应该会自动识别你刚才安装的 JDK 17，如果没有，点击下拉菜单添加。</li>
+<li>点击 Create。</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="第二步创建-java-文件">第二步：创建 Java 文件<a href="#第二步创建-java-文件" class="hash-link" aria-label="第二步：创建 Java 文件的直接链接" title="第二步：创建 Java 文件的直接链接">​</a></h3>
+<ol>
+<li>在左侧项目栏，找到 <code>src</code> 文件夹。</li>
+<li>右键 <code>src</code> -&gt; <code>New</code> -&gt; <code>Java Class</code>。</li>
+<li>输入类名：<code>HelloWorld</code> (首字母大写是规范)。</li>
+<li>回车。</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="第三步编写代码">第三步：编写代码<a href="#第三步编写代码" class="hash-link" aria-label="第三步：编写代码的直接链接" title="第三步：编写代码的直接链接">​</a></h3>
+<p>将以下代码  输入到编辑器中（尽量手敲，不要复制，感受语法）：</p>
+<div class="language-java codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-java codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">public</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">class</span><span class="token plain"> </span><span class="token class-name">HelloWorld</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token comment" style="color:#999988;font-style:italic">// 这是一个 main 方法，是程序的入口，代码从这里开始执行</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token keyword" style="color:#00009f">public</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">static</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">void</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">main</span><span class="token punctuation" style="color:#393A34">(</span><span class="token class-name">String</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain"> args</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token comment" style="color:#999988;font-style:italic">// 这行代码的作用是在控制台打印输出一句话</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token class-name">System</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">out</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">println</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;Hello World!&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="第四步运行程序">第四步：运行程序<a href="#第四步运行程序" class="hash-link" aria-label="第四步：运行程序的  直接链接" title="第四步：运行程序的直接链接">​</a></h3>
+<ol>
+<li>代码写完后，你会发现在 <code>public class HelloWorld</code> 或 <code>main</code> 方法左侧有一个绿色的小三角 ▶️。</li>
+<li>点击绿色小三角，选择 <code>Run &#x27;HelloWorld.main()&#x27;</code>。</li>
+<li>观察下方的控制台 (Console)，你应该能看到输出：<!-- -->
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Hello World!</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+</li>
+</ol>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="6-代码深度解析-必读">6. 代码深度解析 (必读)<a href="#6-代码深度解析-必读" class="hash-link" aria-label="6. 代码深度解析 (必读)的直接链接" title="6. 代码深度解析 (必读)的直接链接">​</a></h2>
+<p>你刚才写下的代码到底是什么意思？</p>
+<ol>
+<li><code>public class HelloWorld</code>:<!-- -->
+<ul>
+<li><code>class</code>: 这是一个“类”，Java 代码也是以“类”为单位组织的。</li>
+<li><code>HelloWorld</code>: 类的名字。注意：类名必须和文件名完全一致（HelloWorld.java）。</li>
+</ul>
+</li>
+<li><code>public static void main(String[] args)</code>:<!-- -->
+<ul>
+<li>这是 Main 方法。</li>
+<li>它是程序的大门（入口）。没有它，程序不知道从哪里开始跑。</li>
+<li>格式是固定的，初学阶段先死记硬背下来，或者在 IDEA 里输入 <code>psvm</code> 然后按回车，IDE 会帮你自动生成。</li>
+</ul>
+</li>
+<li><code>System.out.println(&quot;...&quot;)</code>:<!-- -->
+<ul>
+<li>这是输出语句。</li>
+<li><code>ln</code> 的意思是 line (换行)，打印完括号里的内容后自动换一行。</li>
+<li>IDEA 快捷键：输入 <code>sout</code> 然后按回车。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="7-java-运行原理-面试常识">7. Java 运行原理 (面试常识)<a href="#7-java-运行原理-面试常识" class="hash-link" aria-label="7. Java 运行原理 (面试常识)的直接链接" title="7. Java 运行原理 (面试常识)的直接链接">​</a></h2>
+<p>你写的 <code>.java</code> 文件电脑是看不懂的，它经历了两步：</p>
+<div class="language-mermaid codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-mermaid codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">graph LR</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    A[HelloWorld.java] --&gt;|javac 编译| B[HelloWorld.class]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    B --&gt;|java 运行| C[JVM 虚拟机]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    C --&gt;|解释/编译| D[操作系统/CPU]</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<ol>
+<li>编译 (Compile): <code>javac</code> 命令把如果你写的源码 (<code>.java</code>) 翻译成 字节码 (<code>.class</code>)。字节码是给 JVM 看的。</li>
+<li>运行 (Run): <code>java</code> 命令启动 JVM (Java 虚拟机)，JVM 负责把字节码翻译成具体操作系统能懂的机器语言并运行。</li>
+</ol>
+<blockquote>
+<p>跨平台原理：为什么 Java 说 &quot;Write Once, Run Anywhere&quot;？
+因为不同系统（Windows, Linux, Mac）有不同版本的 JVM，但它们都认识同一种 <code>.class</code> 文件。</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-本节作业">✅ 本节作业<a href="#-本节作业" class="hash-link" aria-label="✅ 本节作业的直接链接" title="✅ 本节作业的直接链接">​</a></h2>
+<ol>
+<li>成功在 IDEA 中打印出 <code>&quot;Hello World&quot;</code>。</li>
+<li>修改代码，打印出你的名字和年龄，例如：<!-- -->
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">姓名：张三</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">年龄：25岁</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<em>(提示：可以写多行 <code>System.out.println</code>)</em></li>
+<li>尝试故意把 <code>System</code> 拼写成 <code>system</code> (小写)，看看 IDE 会报什么错？（体验编译错误）。</li>
+</ol>
+<hr>
+<p>下一步预告：
+当你成功打印出 Hello World 后，下一节我们将学习 变量与数据类型，这会让你的程序拥有“记忆”能力。</p></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/category/java"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">Java</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/java/基础语法"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">2. 基础语法</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-什么是-jdk-了解即可" class="table-of-contents__link toc-highlight">1. 什么是 JDK？ (了解即可)</a></li><li><a href="#2-下载与安装-jdk" class="table-of-contents__link toc-highlight">2. 下载与安装 JDK</a><ul><li><a href="#-下载步骤" class="table-of-contents__link toc-highlight">📥 下载步骤</a></li></ul></li><li><a href="#3-配置环境变量-windows-必做" class="table-of-contents__link toc-highlight">3. 配置环境变量 (Windows 必做)</a><ul><li><a href="#-验证是否成功" class="table-of-contents__link toc-highlight">✅ 验证是否成功</a></li></ul></li><li><a href="#4-安装-ideintellij-idea" class="table-of-contents__link toc-highlight">4. 安装 IDE：IntelliJ IDEA</a></li><li><a href="#5-编写第一个程序hello-world" class="table-of-contents__link toc-highlight">5. 编写第一个程序：Hello World</a><ul><li><a href="#第一步创建项目" class="table-of-contents__link toc-highlight">第一步：创建项目</a></li><li><a href="#第二步创建-java-文件" class="table-of-contents__link toc-highlight">第二步：创建 Java 文件</a></li><li><a href="#第三步编写代码" class="table-of-contents__link toc-highlight">第三步：编写代码</a></li><li><a href="#第四步运行程序" class="table-of-contents__link toc-highlight">第四步：运行程序</a></li></ul></li><li><a href="#6-代码深度解析-必读" class="table-of-contents__link toc-highlight">6. 代码深度解析 (必读)</a></li><li><a href="#7-java-运行原理-面试常识" class="table-of-contents__link toc-highlight">7. Java 运行原理 (面试常识)</a></li><li><a href="#-本节作业" class="table-of-contents__link toc-highlight">✅ 本节作业</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 TigerYu</div></div></div></footer></div>
+</body>
+</html>
