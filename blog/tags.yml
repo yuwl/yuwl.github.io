@@ -1,0 +1,39 @@
+facebook:
+  label: Facebook
+  permalink: /facebook
+  description: Facebook tag description
+
+hello:
+  label: Hello
+  permalink: /hello
+  description: Hello tag description
+
+docusaurus:
+  label: Docusaurus
+  permalink: /docusaurus
+  description: Docusaurus tag description
+
+hola:
+  label: Hola
+  permalink: /hola
+  description: Hola tag description
+
+playwright:
+  label: Playwright
+  permalink: /playwright
+  description: Playwright 端对端自动化测试
+
+springboot:
+  label: Spring Boot
+  permalink: /springboot
+  description: Spring Boot 相关文章
+
+testing:
+  label: Testing
+  permalink: /testing
+  description: 测试相关文章
+
+automation:
+  label: Automation
+  permalink: /automation
+  description: 自动化相关文章
