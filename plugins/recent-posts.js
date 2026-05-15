@@ -53,7 +53,8 @@ module.exports = function recentPostsPlugin(context, options) {
         if (!fm.title) return;
 
         const dateMatch = baseName.match(/^(\d{4}-\d{2}-\d{2})/);
-        const date = dateMatch ? dateMatch[1] : '';
+        const folderDate = dateMatch ? dateMatch[1] : '';
+        const date = fm.date || folderDate;
         const slug = fm.slug || baseName.replace(/\.(md|mdx)$/, '');
         const description = fm.description || extractExcerpt(content);
 

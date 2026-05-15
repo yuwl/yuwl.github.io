@@ -1,6 +1,7 @@
 ---
 slug: deploy-docusaurus-to-github-pages
 title: 将 Docusaurus 网站部署到 GitHub Pages
+date: 2026-05-14 09:00
 authors: [yuwl]
 tags: [docusaurus, github-pages, git, deploy]
 ---
