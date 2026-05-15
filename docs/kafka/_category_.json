@@ -1,0 +1,8 @@
+{
+  "label": "Kafka",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Kafka 学习笔记，涵盖基础概念、架构设计、集群部署及实战应用。"
+  }
+}

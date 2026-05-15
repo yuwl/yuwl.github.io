@@ -1,0 +1,8 @@
+{
+  "label": "Redis",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Redis 从入门到精通的学习笔记，涵盖数据结构、Spring Boot 集成、高并发应用、持久化与集群等核心内容。"
+  }
+}
