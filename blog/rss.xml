@@ -13,8 +13,8 @@
             <link>https://yuwl.github.io/blog/handle-lab-result-concurrency-with-distributed-lock</link>
             <guid>https://yuwl.github.io/blog/handle-lab-result-concurrency-with-distributed-lock</guid>
             <pubDate>Mon, 18 May 2026 09:00:00 GMT</pubDate>
-            <description><![CDATA[在信息化集成中，三方系统（如 LIS、HIS）向我们的系统推送数据是核心业务之一。最近在处理“检验结果推送”接口时，遇到了一个典型的由于上游系统行为异常导致的并发一致性问题。本文记录了从发现问题到使用本地锁，再到最终演进为 Redis 分布式锁的优化过程。]]></description>
-            <content:encoded><![CDATA[<p>在信息化集成中，三方系统（如 LIS、HIS）向我们的系统推送数据是核心业务之一。最近在处理“检验结果推送”接口时，遇到了一个典型的由于上游系统行为异常导致的并发一致性问题。本文记录了从发现问题到使用本地锁，再到最终演进为 Redis 分布式锁的优化过程。</p>
+            <description><![CDATA[要在信息化集成中，三方系统（如 LIS、HIS）向我们的系统推送数据是核心业务之一。最近在处理“检验结果推送”接口时，遇到了一个典型的由于上游系统行为异常导致的并发一致性问题。本文记录了从发现问题到使用本地锁，再到最终演进为 Redis 分布式锁的优化过程。]]></description>
+            <content:encoded><![CDATA[<p>要在信息化集成中，三方系统（如 LIS、HIS）向我们的系统推送数据是核心业务之一。最近在处理“检验结果推送”接口时，遇到了一个典型的由于上游系统行为异常导致的并发一致性问题。本文记录了从发现问题到使用本地锁，再到最终演进为 Redis 分布式锁的优化过程。</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="1-问题背景">1. 问题背景<a href="https://yuwl.github.io/blog/handle-lab-result-concurrency-with-distributed-lock#1-%E9%97%AE%E9%A2%98%E8%83%8C%E6%99%AF" class="hash-link" aria-label="1. 问题背景的直接链接" title="1. 问题背景的直接链接">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="业务场景">业务场景<a href="https://yuwl.github.io/blog/handle-lab-result-concurrency-with-distributed-lock#%E4%B8%9A%E5%8A%A1%E5%9C%BA%E6%99%AF" class="hash-link" aria-label="业务场景的直接链接" title="业务场景的直接链接">​</a></h3>
 <p>我们的系统提供了一个接口，用于接收批量检验结果推送。原本的逻辑是按 <code>instanceId</code>（实例 ID）+ <code>visitId</code>（就诊 ID）建立联合唯一索引，采用 <code>batchInsertOrUpdate</code>（批量插入或更新）的方式保证数据落库。</p>
@@ -27,7 +27,7 @@
 </ol>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="2-解决方案重构落库逻辑">2. 解决方案：重构落库逻辑<a href="https://yuwl.github.io/blog/handle-lab-result-concurrency-with-distributed-lock#2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E9%87%8D%E6%9E%84%E8%90%BD%E5%BA%93%E9%80%BB%E8%BE%91" class="hash-link" aria-label="2. 解决方案：重构落库逻辑的直接链接" title="2. 解决方案：重构落库逻辑的直接链接">​</a></h2>
 <p>为了解决上述问题，我们决定废弃旧的数据库唯一索引，改在代码层面通过“<strong>先删后插</strong>”的模式结合<strong>并发锁</strong>来实现幂等。</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="第一阶段本地��锁实现stringintern">第一阶段：本地锁实现（String.intern）<a href="https://yuwl.github.io/blog/handle-lab-result-concurrency-with-distributed-lock#%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%E6%9C%AC%E5%9C%B0%E9%94%81%E5%AE%9E%E7%8E%B0stringintern" class="hash-link" aria-label="第一阶段：本地锁实现（String.intern）的直接链接" title="第一阶段：本地锁实现（String.intern）的直接链接">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="第一阶段本��地锁实现stringintern">第一阶段：本地锁实现（String.intern）<a href="https://yuwl.github.io/blog/handle-lab-result-concurrency-with-distributed-lock#%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%E6%9C%AC%E5%9C%B0%E9%94%81%E5%AE%9E%E7%8E%B0stringintern" class="hash-link" aria-label="第一阶段：本地锁实现（String.intern）的直接链接" title="第一阶段：本地锁实现（String.intern）的直接链接">​</a></h3>
 <p>在单机环境下，我们首先考虑了利用 JVM 内存锁来控制。</p>
 <p><strong>实现思路：</strong></p>
 <ol>
