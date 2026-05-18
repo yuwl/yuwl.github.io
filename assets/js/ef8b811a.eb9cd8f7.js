@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8947],{6600:t=>{t.exports=JSON.parse('{"authors":[{"name":"yuwl","title":"Software Engineer","url":"https://github.com/yuwl","page":{"permalink":"/blog/authors/yuwl"},"socials":{"github":"https://github.com/yuwl"},"imageURL":"https://github.com/yuwl.png","key":"yuwl","count":8}]}')}}]);
