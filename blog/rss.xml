@@ -63,6 +63,7 @@
             <category>java</category>
             <category>mysql</category>
             <category>concurrency</category>
+            <category>bug-fix</category>
             <category>redis</category>
         </item>
         <item>

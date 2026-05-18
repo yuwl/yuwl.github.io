@@ -66,6 +66,7 @@
         <category label="java" term="java"/>
         <category label="mysql" term="mysql"/>
         <category label="concurrency" term="concurrency"/>
+        <category label="bug-fix" term="bug-fix"/>
         <category label="redis" term="redis"/>
     </entry>
     <entry>
