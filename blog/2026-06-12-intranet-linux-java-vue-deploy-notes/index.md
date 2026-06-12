@@ -326,3 +326,80 @@ sudo firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" 
 6. **Vue 前端**：本地 `npm run build` 生成 `dist/`，把 `dist/` 拷贝到 Nginx 配的 `alias` 目录。
 
 只要这几步跑通，一套“内网 Linux + Java + Vue + Nginx + Redis”的最小可用部署就完成了，剩下的就是接入 CI/CD、监控、日志收集等“高阶玩法”了。
+
+---
+
+## 6. Spring Boot Jar 启停脚本
+
+内网部署 Spring Boot 项目时，每次手动 `kill` + `nohup java -jar` 既容易漏，又容易把端口写错。我习惯在每个 jar 所在目录放一个 `restart.sh`，执行 `./restart.sh` 就完成“先杀旧进程，再后台拉起新进程”的全过程。
+
+### 6.1 脚本内容：`restart.sh`
+
+```bash
+vim restart.sh
+```
+
+```bash
+#!/bin/bash
+# This is a shell script to manual start Jar service
+# 设置环境变量确保脚本输出为UTF-8编码
+export LANG="zh_CN.UTF-8"
+export LC_ALL="zh_CN.UTF-8"
+
+JVM_XMS='256m'
+JVM_XMX='1024m'
+# 获取脚本所在目录
+DIR=$( pwd);
+echo "Shell_Directory:$DIR"
+if [ "$2" != "" ]; then
+    JVM_XMS=$2
+fi
+JAR_NAME=`find ${DIR} -name "*.jar"`
+JAR_FILE="${DIR}/${JAR_NAME##*/}"
+echo "Jar File Path:$JAR_FILE"
+echo "fileName :$JAR_NAME"
+NAME=${JAR_NAME##*/}
+NAME=${NAME%.*}
+PID=`ps -ef | grep "$JAR_NAME" | grep java | grep -v grep | awk '{print $2}'`
+echo "当前进程号为：$PID"
+echo "---------------"
+for pid in $PID
+do
+    sleep 2
+    kill -9  $pid
+    echo "killed [$pid]"
+done
+nohup /data/java17/bin/java -Xms$JVM_XMS -Xmx$JVM_XMX -Dspring.profiles.active=test -Dfile.encoding=UTF-8 -Dserver.port=8082 -jar $JAR_FILE --SERVER_NAME=$NAME > ${DIR}/nohup_$NAME.log 2>&1 &
+echo "新的进程号为: $!"
+```
+
+使用方式：
+
+```bash
+chmod +x restart.sh
+./restart.sh                # 使用脚本里默认的 JVM 参数启动
+./restart.sh "" 512m        # 第二位参数可临时覆盖 -Xms，例如改为 512m
+```
+
+### 6.2 关键点说明
+
+- **`export LANG` / `LC_ALL`**：避免 `nohup.out` 或 `nohup_xxx.log` 里出现中文乱码（Spring Boot 内部 `System.out` / 业务日志含中文时尤其重要）。
+- **`DIR=$( pwd)` + `${JAR_NAME##*/}`**：用“脚本当前目录”而不是“jar 全路径”拼装出来的 `JAR_FILE`，是为了让 `nohup` 启动命令尽量短，也方便后续替换为 `/data/java17/bin/java` 这种**绝对路径的 JDK**，避免服务器上多个 JDK 版本混乱。
+- **`ps -ef | grep "$JAR_NAME" | grep java | grep -v grep | awk '{print $2}'`**：
+  - `grep "$JAR_NAME"`：精准匹配当前 jar 名，避免误杀其它 Java 进程；
+  - `grep java`：防止 `grep` 命令自身被匹配进去（虽然 `grep -v grep` 也能解决，但多一层更稳）；
+  - `grep -v grep`：去掉 grep 自身那一行；
+  - `awk '{print $2}'`：拿到 PID。
+- **`kill -9`**：直接强杀，配合前面的 `sleep 2`，留一点时间给 JVM 走 shutdown hook（虽然 `-9` 不会触发，但还是推荐加 `sleep` 给“可能存在的多 PID”留缓冲）。
+- **`-Dspring.profiles.active=731-test`**：多环境（dev / test / prod）切换的核心参数，按需改成自己的 profile。
+- **`--SERVER_NAME=$NAME`**：把 jar 文件名（去掉 `.jar`）作为应用名传给程序，可在应用里通过 `@Value("${SERVER_NAME}")` 读取，用于日志区分、注册中心注册名等。
+- **`> ${DIR}/nohup_$NAME.log 2>&1 &`**：`2>&1` 把 stderr 也重定向到日志；`&` 后台运行；`nohup_$NAME.log` 让多服务部署时日志互不覆盖。
+
+### 6.3 常见坑
+
+- **`Permission denied`**：脚本没执行权限 → `chmod +x restart.sh`。
+- **`/data/java17/bin/java: No such file or directory`**：JDK 路径和 `/etc/profile.d/java17.sh` 不一致。生产机建议**所有脚本统一用 JDK 绝对路径**，不依赖 `PATH`。
+- **端口被占用**：上次的进程没杀干净。用 `lsof -i :8082` 或 `ss -lntp | grep 8082` 查到残留 PID 再 `kill`。
+- **日志没输出**：检查 `nohup_$NAME.log` 是否在 `DIR` 下，以及 `-Dfile.encoding=UTF-8` 是否带上。
+
+> 小贴士：如果是多实例部署（同一台机器上跑多份 jar），建议把 `restart.sh` 改造成支持 `--server.port=xxxx` 启动参数和 `JAR_NAME` 显式指定的版本，避免脚本自动 `find` 错 jar。
